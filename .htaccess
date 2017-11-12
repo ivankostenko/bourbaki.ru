@@ -1,0 +1,45 @@
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . / [L]
+
+
+# compress text, html, javascript, css, xml:
+AddOutputFilterByType DEFLATE text/plain
+AddOutputFilterByType DEFLATE text/html
+AddOutputFilterByType DEFLATE text/xml
+AddOutputFilterByType DEFLATE text/css
+AddOutputFilterByType DEFLATE application/xml
+AddOutputFilterByType DEFLATE application/xhtml+xml
+AddOutputFilterByType DEFLATE application/rss+xml
+AddOutputFilterByType DEFLATE application/javascript
+AddOutputFilterByType DEFLATE application/x-javascript
+AddOutputFilterByType DEFLATE application/x-font-truetype
+AddOutputFilterByType DEFLATE application/x-font-ttf
+
+# Or, compress certain file types by extension:
+<files *.html>
+SetOutputFilter DEFLATE
+</files>
+
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType application/javascript A604800
+ExpiresByType application/x-javascript A604800
+ExpiresByType text/javascript A604800
+ExpiresByType text/css A604800
+ExpiresByType image/gif A604800
+ExpiresByType image/x-icon A604800
+ExpiresByType image/icon A604800
+ExpiresByType image/jpg A604800
+ExpiresByType image/jpeg A604800
+ExpiresByType image/png A604800
+ExpiresByType application/x-font-ttf A604800
+</IfModule>
+
+
+ 
+ 
+ 
