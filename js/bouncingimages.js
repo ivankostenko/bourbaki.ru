@@ -15,10 +15,10 @@ bouncingImages = new Object();
 
 // CONFIGURATION:
 
-bouncingImages.imgCount = 64;
-bouncingImages.imgWidth = 280;
-bouncingImages.imgHeight = 280;
-bouncingImages.imgSrc = 'images/mini-pretzel-dogs.png';
+bouncingImages.imgCount = 16;
+bouncingImages.imgWidth = 600;
+bouncingImages.imgHeight = 600;
+bouncingImages.imgSrc = 'images/scs_0.png';
 
 bouncingImages.frameRate = 20;
 
