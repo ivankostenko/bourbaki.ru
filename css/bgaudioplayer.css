@@ -33,7 +33,7 @@ background: blue;
 }
 
 input[type=button]{
-transition: all 0.3s ease-in-out;
+transition: all 0.5s ease-in-out;
  background:#f6dca3;
  color:black;
  border:double;
