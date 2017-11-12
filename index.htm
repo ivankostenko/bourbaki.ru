@@ -21,6 +21,7 @@
     <style>
         body {
             overflow: hidden;
+            background-image:
         }
 
         @font-face {
@@ -32,17 +33,115 @@
         }
 
 
-        span {
+        h1 {
             font-family: Roboto Slab, sans-serif;
             font-size: 50px;
             font-style: normal;
             font-variant: normal;
             font-weight: 400;
-            line-height: 60px;
+            line-height: 40px;
             color: white;
             text-align: center;
             text-transform: uppercase;
             text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0px 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        h2 {
+            position: absolute;
+            width: 2.6em;
+            left: 50%;
+            top: 5%;
+            font-size: 20em;
+            text-align: center;
+            margin-left: -1.3em;
+            line-height: 0.8em;
+            letter-spacing: -0.05em;
+            color: rgb(0, 0, 0);
+            text-shadow: -2px -2px 0 rgba(232, 232, 232, 0.7), 2px -2px 0 rgba(232, 232, 232, 0.7), -2px 2px 0 rgba(232, 232, 232, 0.7), 2px 2px 0 rgba(232, 232, 232, 0.7);
+            opacity: 0;
+            z-index: 1;
+            -webkit-animation: logo 5s ease-out 4s;
+            -moz-animation: logo 5s ease-out 4s;
+            -ms-animation: logo 5s ease-out 4s;
+            -o-animation: logo 5s ease-out 4s;
+            animation: logo 5s ease-out 4s;
+        }
+
+        h2 sub {
+            display: block;
+            font-size: 0.3em;
+            letter-spacing: 0;
+            line-height: 0.8em;
+        }
+
+        @-webkit-keyframes logo {
+            0% {
+                -webkit-transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                -webkit-transform: scale(0.1);
+                opacity: 0;
+            }
+        }
+
+        @-moz-keyframes logo {
+            0% {
+                -moz-transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                -moz-transform: scale(0.1);
+                opacity: 0;
+            }
+        }
+
+        @-ms-keyframes logo {
+            0% {
+                -ms-transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                -ms-transform: scale(0.1);
+                opacity: 0;
+            }
+        }
+
+        @-o-keyframes logo {
+            0% {
+                -o-transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                -o-transform: scale(0.1);
+                opacity: 0;
+            }
+        }
+
+        @keyframes logo {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: scale(0.1);
+                opacity: 0;
+            }
         }
     </style>
 
@@ -67,37 +166,36 @@
     </div>
 
     <div style="text-align:center; margin-top:0px; margin-bottom:0px; padding:0px; z-index:2;">
-        <a href="http://www.fedariki.ru">
-            <img style="display: block; margin: 0 auto;" src="images/birds.png" alt="" oncontextmenu="return false">
-        </a>
-        <div style="position:relative;bottom:0px;">
-           
 
-            <script>
-                var playerinstance = bgaudioplayer({
-                    audioid: 'mybgplayer', // id of audio element
-                    audiointerface: 'mybgplayerui', // id of corresponding UI div
-                    autoplay: true, // auto play music?
-                    persistTimeLine: true, // Persist player's current timeline/ volume when moving from page to page?
-                    volume: 0.1, // Default volume (0.0 to 1.0)
-                    volumelevels: 15 // # of volume bars to show in UI
-                })
-            </script>
+        <img style="display: block; margin: 0 auto;" src="images/birds.png" alt="" oncontextmenu="return false">
 
-        </div>
+        <script>
+            var playerinstance = bgaudioplayer({
+                audioid: 'mybgplayer', // id of audio element
+                audiointerface: 'mybgplayerui', // id of corresponding UI div
+                autoplay: true, // auto play music?
+                persistTimeLine: true, // Persist player's current timeline/ volume when moving from page to page?
+                volume: 0.1, // Default volume (0.0 to 1.0)
+                volumelevels: 15 // # of volume bars to show in UI
+            })
+        </script>
+
     </div>
 
-    <marquee style="position: fixed; bottom: 20px; left:0px;"  direction="left " behavior="
-    " truespeed scrollamount="3 " scrolldelay="40 "
-          onmouseover="this.stop(); " onmouseout="this.start(); ">    
-          <div style="display: flex;align-items: center; ">
+    <marquee style="position: fixed; bottom: 0px; left:0px;" direction="left " behavior="
+    " truespeed scrollamount="3 " scrolldelay="40 " onmouseover="this.stop(); " onmouseout="this.start(); ">
+        <div style="display: flex;align-items: center; ">
             <!-- <img src="images/scs_a.webp "  height=120 />  -->
-            <span style="z-index: 3;" >
-              Бескомпромиссное качество классической мужской одежды bespoke с 2006 года, Костюм на заказ, Сорочка на заказ, Пальто на заказ в ателье Бурбаки
-            </span>
+            <h1 style="z-index: 3;">
+                Бескомпромиссное качество классической мужской одежды bespoke с 2006 года, Костюм на заказ, Сорочка на заказ, Пальто на заказ
+                в ателье Бурбаки
+            </h1>
         </div>
-      </marquee>
+    </marquee>
 
+    <h2 class="">Ателье
+        <sub>Бурбаки</sub>
+    </h2>
 </body>
 
 </html>
