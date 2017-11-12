@@ -18,7 +18,7 @@ bouncingImages = new Object();
 bouncingImages.imgCount = 64;
 bouncingImages.imgWidth = 280;
 bouncingImages.imgHeight = 280;
-bouncingImages.imgSrc = 'mini-pretzel-dogs.png';
+bouncingImages.imgSrc = 'images/mini-pretzel-dogs.png';
 
 bouncingImages.frameRate = 20;
 
