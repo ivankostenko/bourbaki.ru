@@ -24,9 +24,9 @@ bouncingImages.imgCount = 16;
 
 bouncingImages.imgWidth = size;
 bouncingImages.imgHeight = size;
-bouncingImages.imgSrc = 'http://res.cloudinary.com/farm26/image/upload/v1510514269/scs_0_pgalqw.png';
-bouncingImages.imgSrc1 = 'http://res.cloudinary.com/farm26/image/upload/v1510514268/btn_1_clhjsp.png';
-bouncingImages.imgSrcInc = 'http://res.cloudinary.com/farm26/image/upload/v1498836554/1r_ycybav.png';
+bouncingImages.imgSrc = 'https://res.cloudinary.com/farm26/image/upload/v1510514269/scs_0_pgalqw.png';
+bouncingImages.imgSrc1 = 'https://res.cloudinary.com/farm26/image/upload/v1510514268/btn_1_clhjsp.png';
+bouncingImages.imgSrcInc = 'https://res.cloudinary.com/farm26/image/upload/v1498836554/1r_ycybav.png';
 bouncingImages.frameRate = 20;
 bouncingImages.maxtime = 5000;
 bouncingImages.minRandomSpeed = 1;

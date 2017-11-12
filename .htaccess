@@ -1,45 +1,73 @@
-RewriteEngine On
-RewriteBase /
-RewriteRule ^index\.php$ - [L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . / [L]
-
-
-# compress text, html, javascript, css, xml:
-AddOutputFilterByType DEFLATE text/plain
-AddOutputFilterByType DEFLATE text/html
-AddOutputFilterByType DEFLATE text/xml
-AddOutputFilterByType DEFLATE text/css
-AddOutputFilterByType DEFLATE application/xml
-AddOutputFilterByType DEFLATE application/xhtml+xml
-AddOutputFilterByType DEFLATE application/rss+xml
-AddOutputFilterByType DEFLATE application/javascript
-AddOutputFilterByType DEFLATE application/x-javascript
-AddOutputFilterByType DEFLATE application/x-font-truetype
-AddOutputFilterByType DEFLATE application/x-font-ttf
-
-# Or, compress certain file types by extension:
-<files *.html>
-SetOutputFilter DEFLATE
-</files>
-
-<IfModule mod_expires.c>
-ExpiresActive On
-ExpiresByType application/javascript A604800
-ExpiresByType application/x-javascript A604800
-ExpiresByType text/javascript A604800
-ExpiresByType text/css A604800
-ExpiresByType image/gif A604800
-ExpiresByType image/x-icon A604800
-ExpiresByType image/icon A604800
-ExpiresByType image/jpg A604800
-ExpiresByType image/jpeg A604800
-ExpiresByType image/png A604800
-ExpiresByType application/x-font-ttf A604800
-</IfModule>
-
-
- 
- 
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www.xn--80aba3aj7au.xn--p1ai$ [NC]
+RewriteRule ^(.*)$ https://xn--80aba3aj7au.xn--p1ai/$1 [R=301,L]
+
+RewriteEngine On
+RewriteCond %{SERVER_PORT} !^443$
+RewriteRule .* https://%{SERVER_NAME}%{REQUEST_URI} [R=301,L]
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(js|css|xml|gz)$">
+    Header append Vary: Accept-Encoding
+  </FilesMatch>
+</IfModule>
+
+RewriteEngine On    
+RewriteCond %{HTTP:Accept-encoding} gzip
+RewriteCond %{REQUEST_FILENAME}\.gz -s
+RewriteRule ^(.*)\.(html|css|js|data) $1\.$2\.gz [QSA]
+
+# Prevent double gzip and give the correct mime-type
+RewriteRule \.css\.gz$ - [T=text/css,E=no-gzip:1,E=FORCE_GZIP]
+RewriteRule \.js\.gz$ - [T=text/javascript,E=no-gzip:1,E=FORCE_GZIP]
+RewriteRule \.html\.gz$ - [T=text/html,E=no-gzip:1,E=FORCE_GZIP]
+RewriteRule \.data\.gz$ - [T=text/plain,E=no-gzip:1,E=FORCE_GZIP]
+
+Header set Content-Encoding gzip env=FORCE_GZIP
+
+AddDefaultCharset UTF-8
+
+# compress text, html, javascript, css, xml:
+AddOutputFilterByType DEFLATE text/plain
+AddOutputFilterByType DEFLATE text/html
+AddOutputFilterByType DEFLATE text/htm
+AddOutputFilterByType DEFLATE text/xml
+AddOutputFilterByType DEFLATE text/css
+AddOutputFilterByType DEFLATE application/xml
+AddOutputFilterByType DEFLATE application/xhtml+xml
+AddOutputFilterByType DEFLATE application/rss+xml
+AddOutputFilterByType DEFLATE application/javascript
+AddOutputFilterByType DEFLATE application/x-javascript
+AddOutputFilterByType DEFLATE application/x-font-truetype
+AddOutputFilterByType DEFLATE application/x-font-ttf
+
+# Or, compress certain file types by extension:
+<files *.html>
+SetOutputFilter DEFLATE
+</files>
+
+AddType font/x-woff .woff2
+
+
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType application/javascript A604800
+ExpiresByType application/x-javascript A604800
+ExpiresByType text/javascript A604800
+ExpiresByType text/css A604800
+ExpiresByType image/gif A604800
+ExpiresByType image/x-icon A604800
+ExpiresByType image/icon A604800
+ExpiresByType image/jpg A604800
+ExpiresByType image/jpeg A604800
+ExpiresByType image/png A604800
+ExpiresByType font/x-twoff  A6048000
+ExpiresDefault "access plus 1 year"
+</IfModule>
+
+<FilesMatch "\.(jpg|jpeg|png|gif|js|css)$">
+Header set Cache-Control "max-age=604800, public"
+</FilesMatch>
+ 
+ 
  
