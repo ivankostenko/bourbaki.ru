@@ -15,13 +15,13 @@
 bouncingImages = new Object();
 
 
-bouncingImages.imgCount = 32;
+bouncingImages.imgCount = 4;
 
 bouncingImages.imgWidth = 600;
 bouncingImages.imgHeight = 600;
 bouncingImages.imgSrc = 'images/scs_0.png';
 bouncingImages.imgSrc1 = 'images/btn_1.png';
-bouncingImages.imgSrcInc = 'http://dogs.fedariki.ru/images/animated_soccer_ball.gif';
+bouncingImages.imgSrcInc = 'http://res.cloudinary.com/farm26/image/upload/v1498836554/1r_ycybav.png';
 bouncingImages.frameRate = 20;
 bouncingImages.maxtime = 5000;
 bouncingImages.minRandomSpeed = 1;

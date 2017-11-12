@@ -107,7 +107,7 @@ var rr=255-r;
 var gg=255-g;
 var bb=255-b;
 
-//col_text="rgba("+gg+","+bb+","+rr+")";
+col_text="rgba("+gg+","+bb+","+rr+")";
 //$('a').css('color', col_text);
 
 //col_text="rgba("+bb+","+rr+","+gg+")";
