@@ -15,7 +15,7 @@
 bouncingImages = new Object();
 
 
-bouncingImages.imgCount = 4;
+bouncingImages.imgCount = 16;
 
 bouncingImages.imgWidth = 600;
 bouncingImages.imgHeight = 600;
