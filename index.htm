@@ -7,9 +7,10 @@
     <title>Ателье Бурбаки | Индивидуальный пошив мужской одежды на заказ в Москве | Bespoke</title>
     <meta name="keywords" content="Пошив одежды, ателье москва, индивидуальный пошив, костюм на заказ, мужской костюм, сорочка на заказ"
     />
-    <meta name="description" content="Бескомпромиссное качество классической мужской одежды bespoke с 2006 года, Костюм на заказ, Сорочка на заказ, Пальто на заказ в ателье Бурбаки"
+    <meta name="description" content="Бескомпромиссное качество классической мужской одежды bespoke с 2006 года, Костюм на заказ, Сорочка на заказ, Пальто на заказ в ателье Мовсква"
     />
-    <link rel="shortcut icon" href="favicon_32_32.png" type="image/image/png">
+    <!-- <link rel="shortcut icon" href="favicon_32_32.png" type="image/image/png"> -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="js/dynlib.js"></script>
@@ -36,8 +37,8 @@
             width: 100%;
             height: 100%;
             overflow: hidden;
-            /* cursor: url('https://res.cloudinary.com/farm26/image/upload/v1508480446/cursor_1_qnx1mi.png'), url('https://res.cloudinary.com/farm26/raw/upload/v1508480908/cursor_1_dvdzy3.cur'), auto; */
             cursor: pointer;
+            /* cursor: url('https://res.cloudinary.com/farm26/image/upload/v1508480446/cursor_1_qnx1mi.png'), url('https://res.cloudinary.com/farm26/raw/upload/v1508480908/cursor_1_dvdzy3.cur'), auto; */
         }
 
         body {
@@ -338,6 +339,41 @@
             -moz-transform: rotateY(180deg) scale(0.7);
             -ms-transform: rotateY(180deg) scale(0.7);
             -o-transform: rotateY(180deg) scale(0.7);
+            cursor: pointer;
+        }
+
+        .img-rotate-x {
+            transition: all 1.2s ease-in-out;
+            -webkit-transition: all 1.2s ease-in-out;
+            -moz-transition: all 1.2s ease-in-out;
+            -ms-transition: all 1.2s ease-in-out;
+            -o-transition: all 1.2s ease-in-out;
+        }
+
+        .img-rotate-x:hover {
+            transform: rotateX(360deg) scale(0.7);
+            -webkit-transform: rotateX(360deg) scale(0.7);
+            -moz-transform: rotateX(360deg) scale(0.7);
+            -ms-transform: rotateX(360deg) scale(0.7);
+            -o-transform: rotateX(360deg) scale(0.7);
+            cursor: pointer;
+        }
+
+        .image {
+            -webkit-animation: spin 4s linear infinite;
+            animation: spin 4s linear infinite;
+        }
+
+        @-webkit-keyframes spin {
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
         }
     </style>
 
@@ -346,8 +382,10 @@
 <body class="disable-selection">
 
     <div class="container img-rotate-y">
-        <img class="img_center" style="z-index: -1;" src="https://res.cloudinary.com/farm26/image/upload/v1510562513/scs_a_jq7zjm.webp"
-        />
+        <picture>
+            <source srcset="https://res.cloudinary.com/farm26/image/upload/v1510562513/scs_a_jq7zjm.webp" type="image/webp">
+            <img class="img_center" style="z-index: -1;" src="https://res.cloudinary.com/farm26/image/upload/v1510581217/scs_none_xi5nyd.png">
+        </picture>
     </div>
 
     <script type="text/javascript">
@@ -357,6 +395,24 @@
                 // InitBG();
                 // IncBouncingImages();
                 // loadBouncingImagesRandom();
+                setTimeout(function () {
+                    $('h2').remove();
+                }, 10000);
+
+                document.onclick = userClicked;
+
+                function userClicked(event) {
+                    // if (!$(event.target).is('#ring,#cookie,#mesh,#fraza_1,#company,#shop')) return;
+                    var x = event.pageX;
+                    var y = event.pageY;
+                    var snowball = document.getElementById("rubl");
+                    snowball.style.display = '';
+                    snowball.style.position = 'absolute';
+                    snowball.style.left = x - 48 + 'px';
+                    snowball.style.top = y - 48 + 'px';
+                    $('#rubl').delay(2000).fadeOut(2000);
+                    //    $('#rubl').animate({"left": "+=25%"}, 2000).fadeOut(1000);
+                }
             });
         });
     </script>
@@ -390,17 +446,17 @@
     </div>
 
     <marquee style="position: fixed; bottom: 0px; left:0px;" direction="left " behavior="
-    " truespeed scrollamount="3 " scrolldelay="40 " onmouseover="this.stop(); " onmouseout="this.start(); ">
-        <div style="display: flex;align-items: center; ">
+    " truespeed scrollamount="" scrolldelay="40 " onmouseover="this.stop(); " onmouseout="this.start(); ">
+        <div style="display: flex;align-items: center;z-index: 99999;">
             <!-- <img  class="" style="z-index: 99999;transform: rotateY(180deg);" src="images/superball.gif " height=100 /> -->
-            <h1 style="">
-                    &nbsp;&nbsp;Бескомпромиссное качество классической мужской одежды bespoke с 2006 года, Костюм на заказ, Сорочка на заказ, Пальто на заказ
-                в ателье Бурбаки
+            <h1>
+                &nbsp;&nbsp;Бескомпромиссное качество классической мужской одежды bespoke с 2006 года, Костюм на заказ, Сорочка на заказ,
+                Пальто на заказ в ателье Мовсква
             </h1>
         </div>
     </marquee>
 
-    <h2  class="">Ателье
+    <h2 class="">Ателье
         <sub>БУРБАКИ</sub>
     </h2>
 
@@ -421,7 +477,7 @@
             </div>
         </div>
         <div id="div_right">
-            <div class="words words-1">
+            <div class="words words-1 img-rotate-x">
                 <span>495</span>
                 <span>&nbsp;&nbsp;</span>
                 <span>&#32;</span>
@@ -450,6 +506,9 @@
         </div>
     </div>
     </div>
+
+    <img class=image id=rubl style="display: none;z-index:2;" src="https://res.cloudinary.com/farm26/image/upload/v1507872973/10r_none_tjuvfi.png" />
+
 </body>
 
 </html>
