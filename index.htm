@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ателье Бурбаки | Индивидуальный пошив мужской одежды на заказ в Москве | Bespoke</title>
-    <meta name="keywords" content="Пошив одежды, ателье москва, индивидуальный пошив, костюм на заказ, мужской костюм, сорочка на заказ"
+    <meta name="keywords" content="пошив одежды, ателье москва, индивидуальный пошив, костюм на заказ, мужской костюм, сорочка на заказ"
     />
     <meta name="description" content="Бескомпромиссное качество классической мужской одежды bespoke с 2006 года, Костюм на заказ, Сорочка на заказ, Пальто на заказ в ателье Москва"
     />
@@ -13,12 +13,7 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="js/dynlib.js"></script>
-    <script src="js/bouncingimages.js"></script>
     <script src="js/bg.js"></script>
-    <script src="js/bgaudioplayer.js"></script>
-
-    <link href="css/bgaudioplayer.css" rel="stylesheet" type="text/css" />
 
     <style>
         .disable-selection {
@@ -228,7 +223,6 @@
             z-index: 100;
         }
 
-        #div_left,
         #div_right {
             flex: 1 480px;
             min-width: 0;
@@ -382,7 +376,7 @@
 <body class="disable-selection">
 
     <div class="container img-rotate-y">
-        <picture>
+        <picture id="img_scs">
             <source srcset="https://res.cloudinary.com/farm26/image/upload/v1510562513/scs_a_jq7zjm.webp" type="image/webp">
             <img class="img_center" style="z-index: -1;" src="https://res.cloudinary.com/farm26/image/upload/v1510581217/scs_none_xi5nyd.png">
         </picture>
@@ -392,27 +386,22 @@
         jQuery(function ($) {
             $(document).ready(function () {
 
-                var box_color = "#ffffc0";
-                // InitBG();
-                // IncBouncingImages();
-                // loadBouncingImagesRandom();
-
                 setTimeout(function () {
                     $('h2').remove();
                 }, 10000);
 
                 setInterval(function () {
-                    $(".play,.rewind,.volume").animate({
-                        opacity: 0.2
+                    $("#img_scs").animate({
+                        opacity: 0.5
                     }, 500).animate({
-                        opacity: 0.9
+                        opacity: 1.0
                     }, 500);
                 }, 4000)
 
                 document.onclick = userClicked;
 
                 function userClicked(event) {
-                    // if (!$(event.target).is('#ring,#cookie,#mesh,#fraza_1,#company,#shop')) return;
+                    // if (!$(event.target).is('#ring')) return;
                     var x = event.pageX;
                     var y = event.pageY;
                     var snowball = document.getElementById("rubl");
@@ -426,34 +415,6 @@
             });
         });
     </script>
-
-    <audio id="mybgplayer">
-        <source src="https://res.cloudinary.com/farm26/video/upload/v1510514118/mark_subbotin_-_leto._antonio_vivaldi_rvjmre.mp3"
-            type="audio/mpeg">
-        <source src="https://res.cloudinary.com/farm26/video/upload/v1510514113/mark_subbotin_-_leto._antonio_vivaldi_c7c5gd.ogg"
-            type="audio/ogg">
-    </audio>
-
-    <div id="mybgplayerui" class="bgplayerui  img-rotate-y" style="position:absolute;z-index:9999">
-        <img class="play" src="images/play.png" data-pausesrc="images/pause.png" />
-        <img class="rewind" src="images/restart.png" style="position:relative; left:-4px;" />
-        <div class="volume"></div>
-    </div>
-
-    <div style="text-align:center; margin-top:0px; margin-bottom:0px; padding:0px; z-index:2;">
-
-        <script>
-            var playerinstance = bgaudioplayer({
-                audioid: 'mybgplayer', // id of audio element
-                audiointerface: 'mybgplayerui', // id of corresponding UI div
-                autoplay: false, // auto play music?
-                persistTimeLine: true, // Persist player's current timeline/ volume when moving from page to page?
-                volume: 0.1, // Default volume (0.0 to 1.0)
-                volumelevels: 15 // # of volume bars to show in UI
-            })
-        </script>
-
-    </div>
 
     <marquee style="position: fixed; bottom: 0px; left:0px;" direction="left " behavior="
     " truespeed scrollamount="" scrolldelay="40 " onmouseover="this.stop(); " onmouseout="this.start(); ">
@@ -471,21 +432,6 @@
     </h2>
 
     <div class="banner_komitet">
-        <div id="div_left">
-            <div class="words words-1">
-                <span>&#32;</span>
-                <span>&#32;</span>
-                <span>&#32;</span>
-                <span>&#32;</span>
-                <span>&#32;</span>
-                <span>&#32;</span>
-                <span>&#32;</span>
-                <span>&#32;</span>
-                <span>&#32;</span>
-                <span>&#32;</span>
-                <span>&#32;</span>
-            </div>
-        </div>
         <div id="div_right">
             <div class="words words-1 img-rotate-x">
                 <span>495</span>
@@ -500,21 +446,7 @@
                 <span>&#32;</span>
                 <span>&#32;</span>
             </div>
-            <div class="words words-1">
-                <span>&#32;</span>
-                <span>&#32;</span>
-                <span>&#32;</span>
-                <span>&#32;</span>
-                <span>&#32;</span>
-                <span>&#32;</span>
-                <span>&#32;</span>
-                <span>&#32;</span>
-                <span>&#32;</span>
-                <span>&#32;</span>
-                <span>&#32;</span>
-            </div>
         </div>
-    </div>
     </div>
 
     <img class=image id=rubl style="display: none;z-index:2;" src="https://res.cloudinary.com/farm26/image/upload/v1507872973/10r_none_tjuvfi.png"
