@@ -4,16 +4,16 @@
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ателье Бурбаки | Индивидуальный пошив мужской одежды | Bespoke</title>
+    <title>Ателье Бурбаки | Индивидуальный пошив мужской одежды на заказ в Москве | Bespoke</title>
     <meta name="keywords" content="Пошив одежды, ателье москва, индивидуальный пошив, костюм на заказ, мужской костюм, сорочка на заказ"
     />
     <meta name="description" content="Бескомпромиссное качество классической мужской одежды bespoke с 2006 года, Костюм на заказ, Сорочка на заказ, Пальто на заказ в ателье Бурбаки"
     />
     <link rel="shortcut icon" href="favicon_32_32.png" type="image/image/png">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="js/dynlib.js"></script>
     <script src="js/bouncingimages.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="js/bg.js"></script>
     <script src="js/bgaudioplayer.js"></script>
 
@@ -30,15 +30,18 @@
             padding: 0;
             margin: 0;
         }
+
         body,
         html {
             width: 100%;
             height: 100%;
             overflow: hidden;
-            cursor: url('https://res.cloudinary.com/farm26/image/upload/v1508480446/cursor_1_qnx1mi.png'), url('https://res.cloudinary.com/farm26/raw/upload/v1508480908/cursor_1_dvdzy3.cur'), auto;
+            /* cursor: url('https://res.cloudinary.com/farm26/image/upload/v1508480446/cursor_1_qnx1mi.png'), url('https://res.cloudinary.com/farm26/raw/upload/v1508480908/cursor_1_dvdzy3.cur'), auto; */
+            cursor: pointer;
         }
+
         body {
-            background: url('https://res.cloudinary.com/farm26/image/upload/v1510514268/birds_sbqi7o.png') no-repeat center center fixed;
+            /* background: url('https://res.cloudinary.com/farm26/image/upload/v1510514268/birds_sbqi7o.png') no-repeat center center fixed; */
             background-size: contain;
             position: relative;
         }
@@ -51,10 +54,26 @@
             unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
         }
 
+        @media all and (min-width: 960px) {
+            h1 {
+                font-size: 60px;
+            }
+        }
+
+        @media all and (max-width: 959px) and (min-width: 600px) {
+            h1 {
+                font-size: 6vw;
+            }
+        }
+
+        @media all and (max-width: 599px) and (min-width: 50px) {
+            h1 {
+                font-size: 7vw;
+            }
+        }
 
         h1 {
             font-family: Roboto Slab, sans-serif;
-            font-size: 60px;
             font-style: normal;
             font-variant: normal;
             font-weight: 400;
@@ -81,13 +100,14 @@
             width: 2.6em;
             left: 50%;
             top: 25%;
+            font-family: Roboto Slab, sans-serif;
             font-size: 20em;
             text-align: center;
             margin-left: -1.3em;
             line-height: 0.8em;
             letter-spacing: -0.05em;
-            color: rgb(0, 0, 0);
-            text-shadow: -2px -2px 0 rgba(128, 128, 128, 0.7), 2px -2px 0 rgba(128, 128, 128, 0.7), -2px 2px 0 rgba(128, 128, 128, 0.7), 2px 2px 0 rgba(128, 128, 128, 0.7);
+            color: rgb(255, 255, 255);
+            text-shadow: -3px -3px 5px rgba(128, 128, 128, 0.7), 3px -3px 5px rgba(128, 128, 128, 0.7), -2px 2px 0 rgba(128, 128, 128, 0.7), 2px 2px 0 rgba(128, 128, 128, 0.7);
             opacity: 0;
             z-index: 1;
             -webkit-animation: logo 5s ease-out 4s;
@@ -173,28 +193,182 @@
                 opacity: 0;
             }
         }
+
+        .container {
+            width: 80%;
+            height: 80%;
+            position: absolute;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        .img_center {
+            max-width: 100%;
+            max-height: 100%;
+            position: absolute;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        .banner_komitet {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+            z-index: 100;
+        }
+
+        #div_left,
+        #div_right {
+            flex: 1 480px;
+            min-width: 0;
+            padding: 0 0;
+        }
+
+        #div_right {
+            padding-left: 0px;
+        }
+
+        .words {
+            color: white;
+            font-size: 3em;
+            line-height: 1;
+        }
+
+        @media (min-width: 992px) {
+            .words span {
+                font-size: 54px;
+            }
+        }
+
+        @media (min-width: 1180px) {
+            .words span {
+                font-size: 68px;
+            }
+        }
+
+        .words span {
+            font-family: sans-serif;
+            font-weight: 700;
+            display: inline-block;
+            animation: move 20s ease-in-out infinite;
+        }
+
+        .words span:nth-child(1) {
+            animation-delay: 5.0s;
+        }
+
+        .words span:nth-child(2) {
+            animation-delay: 5.5s;
+        }
+
+        .words span:nth-child(3) {
+            animation-delay: 6.0s;
+        }
+
+        .words span:nth-child(4) {
+            animation-delay: 6.5s;
+        }
+
+        .words span:nth-child(5) {
+            animation-delay: 7.0s;
+        }
+
+        .words span:nth-child(6) {
+            animation-delay: 7.5s;
+        }
+
+        .words span:nth-child(7) {
+            animation-delay: 8.0s;
+        }
+
+        .words span:nth-child(8) {
+            animation-delay: 8.5s;
+        }
+
+        .words span:nth-child(9) {
+            animation-delay: 9.0s;
+        }
+
+        .words span:nth-child(10) {
+            animation-delay: 9.5s;
+        }
+
+        .words span:nth-child(11) {
+            animation-delay: 10.0s;
+        }
+
+        @keyframes move {
+            0% {
+                transform: translate(-120%, 0);
+                text-shadow: none;
+            }
+            33% {
+                text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+            }
+            66% {
+                text-shadow: none;
+            }
+            100% {
+                transform: translate(100%, 0);
+                text-shadow: none;
+            }
+        }
+
+        .img-rotate-y {
+            transition: all 1.2s ease-in-out;
+            -webkit-transition: all 1.2s ease-in-out;
+            -moz-transition: all 1.2s ease-in-out;
+            -ms-transition: all 1.2s ease-in-out;
+            -o-transition: all 1.2s ease-in-out;
+        }
+
+        .img-rotate-y:hover {
+            transform: rotateY(180deg) scale(0.7);
+            -webkit-transform: rotateY(180deg) scale(0.7);
+            -moz-transform: rotateY(180deg) scale(0.7);
+            -ms-transform: rotateY(180deg) scale(0.7);
+            -o-transform: rotateY(180deg) scale(0.7);
+        }
     </style>
 
 </head>
 
-<body class="disable-selection" bgcolor=white onLoad="javascript:loadBouncingImagesRandom();">
+<body class="disable-selection">
+
+    <div class="container img-rotate-y">
+        <img class="img_center" style="z-index: -1;" src="https://res.cloudinary.com/farm26/image/upload/v1510562513/scs_a_jq7zjm.webp"
+        />
+    </div>
 
     <script type="text/javascript">
         jQuery(function ($) {
             $(document).ready(function () {
                 var box_color = "#ffffc0";
-                InitBG();
-                IncBouncingImages();
+                // InitBG();
+                // IncBouncingImages();
+                // loadBouncingImagesRandom();
             });
         });
     </script>
 
     <audio id="mybgplayer">
-        <source src="https://res.cloudinary.com/farm26/video/upload/v1510514118/mark_subbotin_-_leto._antonio_vivaldi_rvjmre.mp3" type="audio/mpeg">
-        <source src="https://res.cloudinary.com/farm26/video/upload/v1510514113/mark_subbotin_-_leto._antonio_vivaldi_c7c5gd.ogg" type="audio/ogg">
+        <source src="https://res.cloudinary.com/farm26/video/upload/v1510514118/mark_subbotin_-_leto._antonio_vivaldi_rvjmre.mp3"
+            type="audio/mpeg">
+        <source src="https://res.cloudinary.com/farm26/video/upload/v1510514113/mark_subbotin_-_leto._antonio_vivaldi_c7c5gd.ogg"
+            type="audio/ogg">
     </audio>
 
-    <div id="mybgplayerui" class="bgplayerui" style="position:absolute;z-index:9999">
+    <div id="mybgplayerui" class="bgplayerui  img-rotate-y" style="position:absolute;z-index:9999">
         <img class="play" src="images/play.png" data-pausesrc="images/pause.png" />
         <img class="rewind" src="images/restart.png" style="position:relative; left:-4px;" />
         <div class="volume"></div>
@@ -206,7 +380,7 @@
             var playerinstance = bgaudioplayer({
                 audioid: 'mybgplayer', // id of audio element
                 audiointerface: 'mybgplayerui', // id of corresponding UI div
-                autoplay: true, // auto play music?
+                autoplay: false, // auto play music?
                 persistTimeLine: true, // Persist player's current timeline/ volume when moving from page to page?
                 volume: 0.1, // Default volume (0.0 to 1.0)
                 volumelevels: 15 // # of volume bars to show in UI
@@ -218,16 +392,64 @@
     <marquee style="position: fixed; bottom: 0px; left:0px;" direction="left " behavior="
     " truespeed scrollamount="3 " scrolldelay="40 " onmouseover="this.stop(); " onmouseout="this.start(); ">
         <div style="display: flex;align-items: center; ">
-           <!-- <img style="z-index: 99999;" src="images/superball.gif " height=128 /> -->
+            <!-- <img  class="" style="z-index: 99999;transform: rotateY(180deg);" src="images/superball.gif " height=100 /> -->
             <h1 style="">
-                Бескомпромиссное качество классической мужской одежды bespoke с 2006 года, Костюм на заказ, Сорочка на заказ, Пальто на заказ в ателье Бурбаки
+                    &nbsp;&nbsp;Бескомпромиссное качество классической мужской одежды bespoke с 2006 года, Костюм на заказ, Сорочка на заказ, Пальто на заказ
+                в ателье Бурбаки
             </h1>
         </div>
     </marquee>
 
-    <h2 class="">Ателье
-        <sub>Бурбаки</sub>
+    <h2  class="">Ателье
+        <sub>БУРБАКИ</sub>
     </h2>
+
+    <div class="banner_komitet">
+        <div id="div_left">
+            <div class="words words-1">
+                <span>&#32;</span>
+                <span>&#32;</span>
+                <span>&#32;</span>
+                <span>&#32;</span>
+                <span>&#32;</span>
+                <span>&#32;</span>
+                <span>&#32;</span>
+                <span>&#32;</span>
+                <span>&#32;</span>
+                <span>&#32;</span>
+                <span>&#32;</span>
+            </div>
+        </div>
+        <div id="div_right">
+            <div class="words words-1">
+                <span>495</span>
+                <span>&nbsp;&nbsp;</span>
+                <span>&#32;</span>
+                <span>&#32;</span>
+                <span>648</span>
+                <span>&nbsp;&nbsp;</span>
+                <span>4747</span>
+                <span>&#32;</span>
+                <span>&#32;</span>
+                <span>&#32;</span>
+                <span>&#32;</span>
+            </div>
+            <div class="words words-1">
+                <span>&#32;</span>
+                <span>&#32;</span>
+                <span>&#32;</span>
+                <span>&#32;</span>
+                <span>&#32;</span>
+                <span>&#32;</span>
+                <span>&#32;</span>
+                <span>&#32;</span>
+                <span>&#32;</span>
+                <span>&#32;</span>
+                <span>&#32;</span>
+            </div>
+        </div>
+    </div>
+    </div>
 </body>
 
 </html>

@@ -48,6 +48,17 @@ var preloadImgObj, preloadImgObj1, preloadImgObjInc;
 //if (dyn) preloadImgObj1 = loadImg(bouncingImages.imgSrc1);
 //if (dyn) preloadImgObjInc = loadImg(bouncingImages.imgSrcInc);
 
+function getSize() {
+  winWidth = getWinWidth();
+  winHeight = getWinHeight();
+  size = (winWidth / 3) * 2;
+  if (size > 600)
+    size = 600;
+  bouncingImages.imgWidth = size;
+  bouncingImages.imgHeight = size;
+  return ;
+}
+
 function randomBoolean() {
   return Math.random() < 0.5;
 }
@@ -62,8 +73,8 @@ function IncBouncingImages() {
   //	            bouncingImages.time = 0;
   bouncingImages.imgCount += 1;
   localStorage.setItem("imgCount", bouncingImages.imgCount);
-  winWidth = getWinWidth();
-  winHeight = getWinHeight();
+  
+  getSize();
 
   var layerLoop = bouncingImages.imgCount - 1;
   bouncingImages.dirX[layerLoop] = (Math.round(Math.random()) == 0) ? 'left' : 'right';
@@ -90,8 +101,7 @@ function loadBouncingImages() {
   if (preloadImgObj == null) preloadImgObj = loadImg(bouncingImages.imgSrc);
 
   if (dyn && !bouncingImages.isLoaded) {
-    winWidth = getWinWidth();
-    winHeight = getWinHeight();
+    getSize();
     for (var layerLoop = 0; layerLoop < bouncingImages.imgCount; layerLoop++) {
       bouncingImages.dirX[layerLoop] = (Math.round(Math.random()) == 0) ? 'left' : 'right';
       bouncingImages.dirY[layerLoop] = (Math.round(Math.random()) == 0) ? 'up' : 'down';
@@ -120,8 +130,7 @@ function loadBouncingImagesRandom() {
   if (preloadImgObj1 == null) preloadImgObj1 = loadImg(bouncingImages.imgSrc1);
 
   if (dyn && !bouncingImages.isLoaded) {
-    winWidth = getWinWidth();
-    winHeight = getWinHeight();
+    getSize();
     for (var layerLoop = 0; layerLoop < bouncingImages.imgCount; layerLoop++) {
       bouncingImages.dirX[layerLoop] = (Math.round(Math.random()) == 0) ? 'left' : 'right';
       bouncingImages.dirY[layerLoop] = (Math.round(Math.random()) == 0) ? 'up' : 'down';
@@ -186,18 +195,4 @@ function moveBouncingImages() {
   //       {
   //	            IncBouncingImages();
   //       }
-}
-
-function InitFedariki() {
-  //   	if(is_mobile())
-  //            return;
-  bouncingImages.imgCount = 64;
-  bouncingImages.imgWidth = 280;
-  bouncingImages.imgHeight = 280;
-  bouncingImages.imgSrc = 'http://dogs.fedariki.ru/images/mini-pretzel-dogs.png';
-  bouncingImages.frameRate = 20;
-  bouncingImages.minRandomSpeed = 1;
-  bouncingImages.maxRandomSpeed = 4;
-
-
 }
