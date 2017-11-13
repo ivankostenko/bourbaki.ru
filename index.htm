@@ -7,7 +7,7 @@
     <title>Ателье Бурбаки | Индивидуальный пошив мужской одежды на заказ в Москве | Bespoke</title>
     <meta name="keywords" content="Пошив одежды, ателье москва, индивидуальный пошив, костюм на заказ, мужской костюм, сорочка на заказ"
     />
-    <meta name="description" content="Бескомпромиссное качество классической мужской одежды bespoke с 2006 года, Костюм на заказ, Сорочка на заказ, Пальто на заказ в ателье Мовсква"
+    <meta name="description" content="Бескомпромиссное качество классической мужской одежды bespoke с 2006 года, Костюм на заказ, Сорочка на заказ, Пальто на заказ в ателье Москва"
     />
     <!-- <link rel="shortcut icon" href="favicon_32_32.png" type="image/image/png"> -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -391,13 +391,23 @@
     <script type="text/javascript">
         jQuery(function ($) {
             $(document).ready(function () {
+
                 var box_color = "#ffffc0";
                 // InitBG();
                 // IncBouncingImages();
                 // loadBouncingImagesRandom();
+
                 setTimeout(function () {
                     $('h2').remove();
                 }, 10000);
+
+                setInterval(function () {
+                    $(".play,.rewind,.volume").animate({
+                        opacity: 0.2
+                    }, 500).animate({
+                        opacity: 0.9
+                    }, 500);
+                }, 4000)
 
                 document.onclick = userClicked;
 
@@ -451,7 +461,7 @@
             <!-- <img  class="" style="z-index: 99999;transform: rotateY(180deg);" src="images/superball.gif " height=100 /> -->
             <h1>
                 &nbsp;&nbsp;Бескомпромиссное качество классической мужской одежды bespoke с 2006 года, Костюм на заказ, Сорочка на заказ,
-                Пальто на заказ в ателье Мовсква
+                Пальто на заказ в ателье Москва
             </h1>
         </div>
     </marquee>
@@ -507,7 +517,8 @@
     </div>
     </div>
 
-    <img class=image id=rubl style="display: none;z-index:2;" src="https://res.cloudinary.com/farm26/image/upload/v1507872973/10r_none_tjuvfi.png" />
+    <img class=image id=rubl style="display: none;z-index:2;" src="https://res.cloudinary.com/farm26/image/upload/v1507872973/10r_none_tjuvfi.png"
+    />
 
 </body>
 
