@@ -1,0 +1,172 @@
+<html>
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ателье Бурбаки | Индивидуальный пошив мужской одежды на заказ в Москве | Bespoke</title>
+    <meta name="keywords" content="пошив одежды, ателье москва, индивидуальный пошив, костюм на заказ, мужской костюм, сорочка на заказ"
+    />
+    <meta name="description" content="Бескомпромиссное качество классической мужской одежды bespoke с 2006 года, Костюм на заказ, Сорочка на заказ, Пальто на заказ в ателье Москва"
+    />
+    <!-- <link rel="shortcut icon" href="favicon_32_32.png" type="image/image/png"> -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <style>
+        .disable-selection {
+            user-select: none;
+            -ms-user-select: none;
+            -webkit-user-select: none;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body,
+        html {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        body {
+            background-size: contain;
+            position: relative;
+        }
+
+        @font-face {
+            font-family: 'Roboto Slab';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Roboto Slab Regular'), local('RobotoSlab-Regular'), url(https://fonts.gstatic.com/s/robotoslab/v6/y7lebkjgREBJK96VQi37ZjUj_cnvWIuuBMVgbX098Mw.woff2) format('woff2');
+            unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+        }
+
+        @media all and (min-width: 960px) {
+            .main_text {
+                font-size: 60px;
+                line-height: 50px;
+            }
+        }
+
+        @media all and (max-width: 959px) and (min-width: 600px) {
+            .main_text {
+                font-size: 6vw;
+                line-height: 6.1vw;
+            }
+        }
+
+        @media all and (max-width: 599px) and (min-width: 50px) {
+            .main_text {
+                font-size: 7vw;
+                line-height: 7.1vw;
+            }
+        }
+
+
+        .main_text {
+            font-family: Roboto Slab, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 400;
+            color: white;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+
+        .works {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 50%;
+            bottom: 50%;
+            background: red;
+        }
+
+        .price {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            right: 0;
+            bottom: 50%;
+            background: blue;
+        }
+
+        .fabrics {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 50%;
+            bottom: 0;
+            background: yellow;
+        }
+
+        .contacts {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            right: 0;
+            bottom: 0;
+            background: green;
+        }
+
+        .center_vh {
+            position: relative;
+            float: left;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+
+</head>
+
+<body class="disable-selection">
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#works,#price,#fabrics,#contacts').click(function () {
+                $(this).css({
+                    "z-index": "100"
+                });
+                $(this).animate({
+                    "top": "0",
+                    "bottom": "0",
+                    "left": "0",
+                    "right": "0",
+                    "position": "fixed"
+                }, 500);
+            });
+        });
+    </script>
+
+    <div id="works" class="works">
+        <div class="center_vh">
+            <span class="main_text" style="color:yellow">работы</span>
+        </div>
+    </div>
+    <div id="price" class="price">
+        <div class="center_vh">
+            <span class="main_text" style="color:yellow">цены</span>
+        </div>
+    </div>
+    <div id="fabrics" class="fabrics">
+        <div class="center_vh">
+            <span class="main_text" style="color:red">ткани</span>
+        </div>
+    </div>
+    <div id="contacts" class="contacts">
+        <div class="center_vh">
+            <span class="main_text" style="color:white">контакты</span>
+        </div>
+    </div>
+
+</body>
+
+</html>
