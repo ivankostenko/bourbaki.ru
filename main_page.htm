@@ -105,7 +105,7 @@
         }
 
         #contacts {
-            position: absolute;
+            position: fixed;
             top: 50%;
             left: 50%;
             right: 0;
@@ -133,6 +133,7 @@
             background: red;
             display: none;
         }
+
     </style>
 
 </head>
@@ -145,17 +146,17 @@
                 $('#works_page').fadeIn(500);
                 $('#works,#price,#fabrics,#contacts').fadeOut(500);
             });
-            $('#price').click(function () {
-                $('#price_page').fadeIn(500);
+            $('#fabrics').click(function () {
+                $('#fabrics_page').fadeIn(500);
                 $('#works,#price,#fabrics,#contacts').fadeOut(500);
             });
             $('#works_page').click(function () {
                 $('#works,#price,#fabrics,#contacts').fadeIn(500);
-                $('#works_page').fadeOut(500);           
+                $('#works_page').fadeOut(500);
             });
-            $('#price_page').click(function () {
+            $('#fabrics_page').click(function () {
                 $('#works,#price,#fabrics,#contacts').fadeIn(500);
-                $('#price_page').fadeOut(500);           
+                $('#fabrics_page').fadeOut(500);
             });
         });
     </script>
