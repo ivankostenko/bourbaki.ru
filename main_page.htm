@@ -77,40 +77,48 @@
         }
 
 
-        .works {
+        #works {
             position: absolute;
             top: 0;
             left: 0;
             right: 50%;
             bottom: 50%;
             background: red;
+            z-index: 10;
+            transition: all 1s ease-in-out;
         }
 
-        .price {
+        #price {
             position: absolute;
             top: 0;
             left: 50%;
             right: 0;
             bottom: 50%;
             background: blue;
+            z-index: 10;
+            transition: all 1s ease-in-out;
         }
 
-        .fabrics {
+        #fabrics {
             position: absolute;
             top: 50%;
             left: 0;
             right: 50%;
             bottom: 0;
             background: yellow;
+            z-index: 10;
+            transition: all 1s ease-in-out;
         }
 
-        .contacts {
+        #contacts {
             position: absolute;
             top: 50%;
             left: 50%;
             right: 0;
             bottom: 0;
             background: green;
+            z-index: 10;
+            transition: all 1s ease-in-out;
         }
 
         .center_vh {
@@ -128,6 +136,19 @@
             right: 0;
             position: fixed;
         }
+
+        #works_page {
+            transition: all 1s ease-in-out;
+        }
+
+        
+        .fade_out {
+            opacity: 0;
+        }
+
+        .display_none {
+            display: none;
+        }
     </style>
 
 </head>
@@ -138,28 +159,35 @@
         $(document).ready(function () {
             $('#works,#price,#fabrics,#contacts').click(function () {
 
-                $('#works_page').fadeIn(500);
+                $('#works,#price,#fabrics,#contacts').addClass('fade_out');
+                setInterval(function () {
+                    $('#works,#price,#fabrics,#contacts').addClass('display_none');
+                }, 2000)
+
+            });
+            $('#works_page,#price_page,#fabrics_page,#contacts_page').click(function () {
+                $('#works,#price,#fabrics,#contacts').removeClass('fade_out');
             });
         });
     </script>
 
     <!-- Main Page section -->
-    <div id="works" class="works">
+    <div id="works" class="">
         <div class="center_vh">
             <span class="main_text" style="color:yellow">работы</span>
         </div>
     </div>
-    <div id="price" class="price">
+    <div id="price" class="">
         <div class="center_vh">
             <span class="main_text" style="color:yellow">цены</span>
         </div>
     </div>
-    <div id="fabrics" class="fabrics">
+    <div id="fabrics" class="">
         <div class="center_vh">
             <span class="main_text" style="color:red">ткани</span>
         </div>
     </div>
-    <div id="contacts" class="contacts">
+    <div id="contacts" class="">
         <div class="center_vh">
             <span class="main_text" style="color:white">контакты</span>
         </div>
@@ -169,7 +197,7 @@
 
     <!-- Works Page section -->
 
-    <div id="works_page" class="full_screen" style="display:none;background: red;">
+    <div id="works_page" class="full_screen" style="background: red;">
         <div id="wowslider-container1" class="center_vh">
             <div class="ws_images">
                 <ul>

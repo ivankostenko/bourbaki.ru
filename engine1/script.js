@@ -18,4 +18,4 @@ function ws_book(p,n,b){var f=jQuery;var m=f(this);var i=f(".ws_list",b);var k=f
 // Obfuscated by Javascript Obfuscator
 // http://javascript-source.com
 //***********************************************
-jQuery("#wowslider-container1").wowSlider({effect:"book",prev:"",next:"",duration:20*100,delay:20*100,width:900,height:600,autoPlay:true,autoPlayVideo:false,playPause:false,stopOnHover:true,loop:false,bullets:0,caption:false,captionEffect:"none",controls:false,controlsThumb:false,responsive:1,fullScreen:false,gestures:2,onBeforeStep:0,images:0});
+jQuery("#wowslider-container1").wowSlider({effect:"book",prev:"",next:"",duration:20*100,delay:20*100,width:900,height:600,autoPlay:true,autoPlayVideo:false,playPause:false,stopOnHover:false,loop:false,bullets:0,caption:false,captionEffect:"none",controls:false,controlsThumb:false,responsive:1,fullScreen:false,gestures:2,onBeforeStep:0,images:0});
