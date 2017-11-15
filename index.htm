@@ -12,8 +12,6 @@
     <!-- <link rel="shortcut icon" href="favicon_32_32.png" type="image/image/png"> -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-
     <style>
         .disable-selection {
             user-select: none;
@@ -90,115 +88,6 @@
             0 20px 20px rgba(0, 0, 0, 0.25);
         }
 
-        h2 {
-            position: absolute;
-            width: 2.6em;
-            left: 50%;
-            top: 25%;
-            font-family: Roboto Slab, sans-serif;
-            font-size: 20em;
-            text-align: center;
-            margin-left: -1.3em;
-            line-height: 0.8em;
-            letter-spacing: -0.05em;
-            color: rgb(255, 255, 255);
-            text-shadow: -3px -3px 5px rgba(128, 128, 128, 0.7), 3px -3px 5px rgba(128, 128, 128, 0.7), -2px 2px 0 rgba(128, 128, 128, 0.7), 2px 2px 0 rgba(128, 128, 128, 0.7);
-            opacity: 0;
-            z-index: 1;
-            -webkit-animation: logo 5s ease-out 4s;
-            -moz-animation: logo 5s ease-out 4s;
-            -ms-animation: logo 5s ease-out 4s;
-            -o-animation: logo 5s ease-out 4s;
-            animation: logo 5s ease-out 4s;
-        }
-
-        h2 sub {
-            display: block;
-            font-size: 0.3em;
-            letter-spacing: 0;
-            line-height: 0.8em;
-        }
-
-        @-webkit-keyframes logo {
-            0% {
-                -webkit-transform: scale(1);
-                opacity: 1;
-            }
-            50% {
-                opacity: 1;
-            }
-            100% {
-                -webkit-transform: scale(0.1);
-                opacity: 0;
-            }
-        }
-
-        @-moz-keyframes logo {
-            0% {
-                -moz-transform: scale(1);
-                opacity: 1;
-            }
-            50% {
-                opacity: 1;
-            }
-            100% {
-                -moz-transform: scale(0.1);
-                opacity: 0;
-            }
-        }
-
-        @-ms-keyframes logo {
-            0% {
-                -ms-transform: scale(1);
-                opacity: 1;
-            }
-            50% {
-                opacity: 1;
-            }
-            100% {
-                -ms-transform: scale(0.1);
-                opacity: 0;
-            }
-        }
-
-        @-o-keyframes logo {
-            0% {
-                -o-transform: scale(1);
-                opacity: 1;
-            }
-            50% {
-                opacity: 1;
-            }
-            100% {
-                -o-transform: scale(0.1);
-                opacity: 0;
-            }
-        }
-
-        @keyframes logo {
-            0% {
-                transform: scale(1);
-                opacity: 1;
-            }
-            50% {
-                opacity: 1;
-            }
-            100% {
-                transform: scale(0.1);
-                opacity: 0;
-            }
-        }
-
-        .container {
-            width: 80%;
-            height: 80%;
-            position: absolute;
-            margin: auto;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-        }
 
         .img_center {
             max-width: 100%;
@@ -245,22 +134,6 @@
             cursor: pointer;
         }
 
-        .image {
-            -webkit-animation: spin 4s linear infinite;
-            animation: spin 4s linear infinite;
-        }
-
-        @-webkit-keyframes spin {
-            100% {
-                -webkit-transform: rotate(360deg);
-            }
-        }
-
-        @keyframes spin {
-            100% {
-                -webkit-transform: rotate(360deg);
-            }
-        }
     </style>
 
 </head>
@@ -275,37 +148,7 @@
     </div>
 
     <script type="text/javascript">
-        jQuery(function ($) {
-            $(document).ready(function () {
-
-                setTimeout(function () {
-                    $('h2').remove();
-                }, 10000);
-
-                setInterval(function () {
-                    $("#img_scs").animate({
-                        opacity: 0.5
-                    }, 500).animate({
-                        opacity: 1.0
-                    }, 500);
-                }, 4000)
-
-                document.onclick = userClicked;
-
-                function userClicked(event) {
-                    // if (!$(event.target).is('#ring')) return;
-                    var x = event.pageX;
-                    var y = event.pageY;
-                    var snowball = document.getElementById("rubl");
-                    snowball.style.display = '';
-                    snowball.style.position = 'absolute';
-                    snowball.style.left = x - 48 + 'px';
-                    snowball.style.top = y - 48 + 'px';
-                    $('#rubl').delay(2000).fadeOut(2000);
-                    //    $('#rubl').animate({"left": "+=25%"}, 2000).fadeOut(1000);
-                }
-            });
-        });
+    
     </script>
 
     <marquee style="position: fixed; bottom: 0px; left:0px;" direction="left " behavior="
@@ -318,13 +161,6 @@
             </h1>
         </div>
     </marquee>
-
-    <h2 class="">Ателье
-        <sub>БУРБАКИ</sub>
-    </h2>
-
-    <img class=image id=rubl style="display: none;z-index:2;" src="https://res.cloudinary.com/farm26/image/upload/v1507872973/10r_none_tjuvfi.png"
-    />
 
 </body>
 
