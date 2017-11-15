@@ -2,112 +2,170 @@
 
 <head>
 
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ателье Бурбаки | Индивидуальный пошив мужской одежды на заказ в Москве | Bespoke</title>
-    <meta name="keywords" content="пошив одежды, ателье москва, индивидуальный пошив, костюм на заказ, мужской костюм, сорочка на заказ"
-    />
-    <meta name="description" content="Бескомпромиссное качество классической мужской одежды bespoke с 2006 года, Костюм на заказ, Сорочка на заказ, Пальто на заказ в ателье Москва"
-    />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+		}
 
-    <style>
-        .disable-selection {
-            user-select: none;
-            -ms-user-select: none;
-            -webkit-user-select: none;
-        }
+		body,
+		html {
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+		}
 
-        * {
-            padding: 0;
-            margin: 0;
-        }
+		@font-face {
+			font-family: 'Roboto Slab';
+			font-style: normal;
+			font-weight: 400;
+			src: local('Roboto Slab Regular'), local('RobotoSlab-Regular'), url(https://fonts.gstatic.com/s/robotoslab/v6/y7lebkjgREBJK96VQi37ZjUj_cnvWIuuBMVgbX098Mw.woff2) format('woff2');
+			unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+		}
 
-        body,
-        html {
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
+		@media all and (min-width: 960px) {
+			.main_text {
+				font-size: 60px;
+				line-height: 50px;
+			}
+		}
 
-        @font-face {
-            font-family: 'Roboto Slab';
-            font-style: normal;
-            font-weight: 400;
-            src: local('Roboto Slab Regular'), local('RobotoSlab-Regular'), url(https://fonts.gstatic.com/s/robotoslab/v6/y7lebkjgREBJK96VQi37ZjUj_cnvWIuuBMVgbX098Mw.woff2) format('woff2');
-            unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-        }
+		@media all and (max-width: 959px) and (min-width: 600px) {
+			.main_text {
+				font-size: 6vw;
+				line-height: 6.1vw;
+			}
+		}
 
-        @media all and (min-width: 960px) {
-            .main_text {
-                font-size: 60px;
-                line-height: 50px;
-            }
-        }
+		@media all and (max-width: 599px) and (min-width: 50px) {
+			.main_text {
+				font-size: 7vw;
+				line-height: 7.1vw;
+			}
+		}
 
-        @media all and (max-width: 959px) and (min-width: 600px) {
-            .main_text {
-                font-size: 6vw;
-                line-height: 6.1vw;
-            }
-        }
+		.main_text {
+			font-family: Roboto Slab, sans-serif;
+			font-style: normal;
+			font-variant: normal;
+			font-weight: 400;
+			color: white;
+			text-align: center;
+			text-transform: uppercase;
+		}
 
-        @media all and (max-width: 599px) and (min-width: 50px) {
-            .main_text {
-                font-size: 7vw;
-                line-height: 7.1vw;
-            }
-        }
+		.center_vh {
+			position: relative;
+			float: left;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
 
-        .main_text {
-            font-family: Roboto Slab, sans-serif;
-            font-style: normal;
-            font-variant: normal;
-            font-weight: 400;
-            color: white;
-            text-align: center;
-            text-transform: uppercase;
-        }
+		.full_screen {
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			position: fixed;
+			z-index: 100;
+			background-color: white;
+			-webkit-transition: all 1s ease-in-out;
+			transition: all 1s ease-in-out;
+		}
+	</style>
 
-        .center_vh {
-            position: relative;
-            float: left;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .full_screen {
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            position: fixed;
-            z-index: 100;
-            background-color: white;
-            -webkit-transition: all 1s ease-in-out;
-            transition: all 1s ease-in-out;
-        }
-    </style>
+	<link rel="stylesheet" type="text/css" href="engine1/style.css" />
 
 </head>
 
-<body class="disable-selection">
+<body>
 
-    <script type="text/javascript">
-        $(document).ready(function () {
-
-        });
-    </script>
-
-    <div id="works" class="works full_screen">
-        <div class="center_vh">
-            
-        </div>
-    </div>
+	<div id="works" class="works full_screen" style="background: red;">
+		<div id="wowslider-container1" class="center_vh">
+			<div class="ws_images">
+				<ul>
+					<li>
+						<img src="data1/images/w_1.jpg" alt="w_1" title="w_1" id="wows1_0" />
+					</li>
+					<li>
+						<img src="data1/images/w_10.jpg" alt="w_10" title="w_10" id="wows1_1" />
+					</li>
+					<li>
+						<img src="data1/images/w_2.jpg" alt="w_2" title="w_2" id="wows1_2" />
+					</li>
+					<li>
+						<img src="data1/images/w_3.jpg" alt="w_3" title="w_3" id="wows1_3" />
+					</li>
+					<li>
+						<img src="data1/images/w_4.jpg" alt="w_4" title="w_4" id="wows1_4" />
+					</li>
+					<li>
+						<img src="data1/images/w_5.jpg" alt="w_5" title="w_5" id="wows1_5" />
+					</li>
+					<li>
+						<img src="data1/images/w_6.jpg" alt="w_6" title="w_6" id="wows1_6" />
+					</li>
+					<li>
+						<img src="data1/images/w_7.jpg" alt="w_7" title="w_7" id="wows1_7" />
+					</li>
+					<li>
+						<a href="http://wowslider.net">
+							<img src="data1/images/w_8.jpg" alt="html5 slider" title="w_8" id="wows1_8" />
+						</a>
+					</li>
+					<li>
+						<img src="data1/images/w_9.jpg" alt="w_9" title="w_9" id="wows1_9" />
+					</li>
+				</ul>
+			</div>
+			<div class="ws_thumbs">
+				<div>
+					<a href="#" title="w_1">
+						<img src="data1/tooltips/w_1.jpg" alt="" />
+					</a>
+					<a href="#" title="w_10">
+						<img src="data1/tooltips/w_10.jpg" alt="" />
+					</a>
+					<a href="#" title="w_2">
+						<img src="data1/tooltips/w_2.jpg" alt="" />
+					</a>
+					<a href="#" title="w_3">
+						<img src="data1/tooltips/w_3.jpg" alt="" />
+					</a>
+					<a href="#" title="w_4">
+						<img src="data1/tooltips/w_4.jpg" alt="" />
+					</a>
+					<a href="#" title="w_5">
+						<img src="data1/tooltips/w_5.jpg" alt="" />
+					</a>
+					<a href="#" title="w_6">
+						<img src="data1/tooltips/w_6.jpg" alt="" />
+					</a>
+					<a href="#" title="w_7">
+						<img src="data1/tooltips/w_7.jpg" alt="" />
+					</a>
+					<a href="#" title="w_8">
+						<img src="data1/tooltips/w_8.jpg" alt="" />
+					</a>
+					<a href="#" title="w_9">
+						<img src="data1/tooltips/w_9.jpg" alt="" />
+					</a>
+				</div>
+			</div>
+			<div class="ws_script" style="position:absolute;left:-99%">
+				<a href="http://wowslider.net">jquery image carousel</a> by WOWSlider.com v8.8</div>
+			<div class="ws_shadow"></div>
+		</div>
+	</div>
+	
+	<script type="text/javascript" src="engine1/wowslider.js"></script>
+	<script type="text/javascript" src="engine1/script.js"></script>
 
 </body>
 

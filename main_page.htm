@@ -14,6 +14,8 @@
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 
+    <link rel="stylesheet" type="text/css" href="engine1/style.css" />
+
     <style>
         .disable-selection {
             user-select: none;
@@ -32,11 +34,6 @@
             height: 100%;
             overflow: hidden;
             cursor: pointer;
-        }
-
-        body {
-            background-size: contain;
-            position: relative;
         }
 
         @font-face {
@@ -130,11 +127,7 @@
             left: 0;
             right: 0;
             position: fixed;
-            z-index: 100;
-            background-color: white;
-            -webkit-transition: all 1s ease-in-out;
-            transition: all 1s ease-in-out;       
-             }
+        }
     </style>
 
 </head>
@@ -144,12 +137,13 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $('#works,#price,#fabrics,#contacts').click(function () {
-                $(this).toggleClass('full_screen');
 
+                $('#works_page').fadeIn(500);
             });
         });
     </script>
 
+    <!-- Main Page section -->
     <div id="works" class="works">
         <div class="center_vh">
             <span class="main_text" style="color:yellow">работы</span>
@@ -170,6 +164,92 @@
             <span class="main_text" style="color:white">контакты</span>
         </div>
     </div>
+
+    <!-- Main Page section end-->
+
+    <!-- Works Page section -->
+
+    <div id="works_page" class="full_screen" style="display:none;background: red;">
+        <div id="wowslider-container1" class="center_vh">
+            <div class="ws_images">
+                <ul>
+                    <li>
+                        <img src="data1/images/w_1.jpg" alt="w_1" title="w_1" id="wows1_0" />
+                    </li>
+                    <li>
+                        <img src="data1/images/w_10.jpg" alt="w_10" title="w_10" id="wows1_1" />
+                    </li>
+                    <li>
+                        <img src="data1/images/w_2.jpg" alt="w_2" title="w_2" id="wows1_2" />
+                    </li>
+                    <li>
+                        <img src="data1/images/w_3.jpg" alt="w_3" title="w_3" id="wows1_3" />
+                    </li>
+                    <li>
+                        <img src="data1/images/w_4.jpg" alt="w_4" title="w_4" id="wows1_4" />
+                    </li>
+                    <li>
+                        <img src="data1/images/w_5.jpg" alt="w_5" title="w_5" id="wows1_5" />
+                    </li>
+                    <li>
+                        <img src="data1/images/w_6.jpg" alt="w_6" title="w_6" id="wows1_6" />
+                    </li>
+                    <li>
+                        <img src="data1/images/w_7.jpg" alt="w_7" title="w_7" id="wows1_7" />
+                    </li>
+                    <li>
+                        <a href="http://wowslider.net">
+                            <img src="data1/images/w_8.jpg" alt="html5 slider" title="w_8" id="wows1_8" />
+                        </a>
+                    </li>
+                    <li>
+                        <img src="data1/images/w_9.jpg" alt="w_9" title="w_9" id="wows1_9" />
+                    </li>
+                </ul>
+            </div>
+            <div class="ws_thumbs">
+                <div>
+                    <a href="#" title="w_1">
+                        <img src="data1/tooltips/w_1.jpg" alt="" />
+                    </a>
+                    <a href="#" title="w_10">
+                        <img src="data1/tooltips/w_10.jpg" alt="" />
+                    </a>
+                    <a href="#" title="w_2">
+                        <img src="data1/tooltips/w_2.jpg" alt="" />
+                    </a>
+                    <a href="#" title="w_3">
+                        <img src="data1/tooltips/w_3.jpg" alt="" />
+                    </a>
+                    <a href="#" title="w_4">
+                        <img src="data1/tooltips/w_4.jpg" alt="" />
+                    </a>
+                    <a href="#" title="w_5">
+                        <img src="data1/tooltips/w_5.jpg" alt="" />
+                    </a>
+                    <a href="#" title="w_6">
+                        <img src="data1/tooltips/w_6.jpg" alt="" />
+                    </a>
+                    <a href="#" title="w_7">
+                        <img src="data1/tooltips/w_7.jpg" alt="" />
+                    </a>
+                    <a href="#" title="w_8">
+                        <img src="data1/tooltips/w_8.jpg" alt="" />
+                    </a>
+                    <a href="#" title="w_9">
+                        <img src="data1/tooltips/w_9.jpg" alt="" />
+                    </a>
+                </div>
+            </div>
+            <div class="ws_script" style="position:absolute;left:-99%">
+                <a href="http://wowslider.net">jquery image carousel</a> by WOWSlider.com v8.8</div>
+            <div class="ws_shadow"></div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="engine1/wowslider.js"></script>
+    <script type="text/javascript" src="engine1/script.js"></script>
+    <!-- Works section end-->
 
 </body>
 
