@@ -31,12 +31,6 @@
             width: 100%;
             height: 100%;
             overflow: hidden;
-            cursor: pointer;
-        }
-
-        body {
-            background-size: contain;
-            position: relative;
         }
 
         @font-face {
@@ -68,7 +62,6 @@
             }
         }
 
-
         .main_text {
             font-family: Roboto Slab, sans-serif;
             font-style: normal;
@@ -77,43 +70,6 @@
             color: white;
             text-align: center;
             text-transform: uppercase;
-        }
-
-
-        .works {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 50%;
-            bottom: 50%;
-            background: red;
-        }
-
-        .price {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            right: 0;
-            bottom: 50%;
-            background: blue;
-        }
-
-        .fabrics {
-            position: absolute;
-            top: 50%;
-            left: 0;
-            right: 50%;
-            bottom: 0;
-            background: yellow;
-        }
-
-        .contacts {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            right: 0;
-            bottom: 0;
-            background: green;
         }
 
         .center_vh {
@@ -133,8 +89,8 @@
             z-index: 100;
             background-color: white;
             -webkit-transition: all 1s ease-in-out;
-            transition: all 1s ease-in-out;       
-             }
+            transition: all 1s ease-in-out;
+        }
     </style>
 
 </head>
@@ -143,31 +99,13 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
-            $('#works,#price,#fabrics,#contacts').click(function () {
-                $(this).toggleClass('full_screen');
 
-            });
         });
     </script>
 
-    <div id="works" class="works">
+    <div id="works" class="works full_screen">
         <div class="center_vh">
-            <span class="main_text" style="color:yellow">работы</span>
-        </div>
-    </div>
-    <div id="price" class="price">
-        <div class="center_vh">
-            <span class="main_text" style="color:yellow">цены</span>
-        </div>
-    </div>
-    <div id="fabrics" class="fabrics">
-        <div class="center_vh">
-            <span class="main_text" style="color:red">ткани</span>
-        </div>
-    </div>
-    <div id="contacts" class="contacts">
-        <div class="center_vh">
-            <span class="main_text" style="color:white">контакты</span>
+            
         </div>
     </div>
 
