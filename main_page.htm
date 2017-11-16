@@ -15,6 +15,7 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 
     <link rel="stylesheet" type="text/css" href="engine1/style.css" />
+    <link rel="stylesheet" type="text/css" href="engine2/style.css" />
 
     <style>
         .disable-selection {
@@ -71,11 +72,23 @@
             font-style: normal;
             font-variant: normal;
             font-weight: 400;
-            color: white;
             text-align: center;
             text-transform: uppercase;
+            color:#18f0b8;
         }
 
+        .img-rotate-x,
+        .img-rotate-y {
+            transition: all 2s ease-in-out;
+        }
+
+        .img-rotate-x:hover {
+            transform: rotateX(360deg);
+        }
+
+        .img-rotate-y:hover {
+            transform: rotateY(360deg);
+        }
 
         #works {
             position: absolute;
@@ -83,7 +96,10 @@
             left: 0;
             right: 50%;
             bottom: 50%;
-            background: red;
+            background: linear-gradient(270deg, #18f0b8, #18a2f0, #db5640);
+            background-size: 600% 600%;
+            animation: Gradient 60s ease infinite;
+            animation-delay: 0s;
         }
 
         #price {
@@ -92,7 +108,10 @@
             left: 50%;
             right: 0;
             bottom: 50%;
-            background: blue;
+            background: linear-gradient(270deg, #18f0b8, #18a2f0, #db5640);
+            background-size: 600% 600%;
+            animation: Gradient 60s ease infinite;
+            animation-delay: 4s;
         }
 
         #fabrics {
@@ -101,7 +120,10 @@
             left: 0;
             right: 50%;
             bottom: 0;
-            background: yellow;
+            background: linear-gradient(270deg, #18f0b8, #18a2f0, #db5640);
+            background-size: 600% 600%;
+            animation: Gradient 60s ease infinite;
+            animation-delay: 8s;
         }
 
         #contacts {
@@ -110,7 +132,10 @@
             left: 50%;
             right: 0;
             bottom: 0;
-            background: green;
+            background: linear-gradient(270deg, #18f0b8, #18a2f0, #db5640);
+            background-size: 600% 600%;
+            animation: Gradient 60s ease infinite;
+            animation-delay: 12s;
         }
 
         .center_vh {
@@ -129,11 +154,24 @@
             position: absolute;
         }
 
-        #works_page {
-            background: red;
+        #works_page, #fabrics_page {
             display: none;
+            background: linear-gradient(270deg, #18f0b8, #18a2f0, #db5640);
+            background-size: 600% 600%;
+            animation: Gradient 60s ease infinite;
         }
 
+        @keyframes Gradient {
+            0% {
+                background-position: 0% 50%
+            }
+            50% {
+                background-position: 100% 50%
+            }
+            100% {
+                background-position: 0% 50%
+            }
+        }
     </style>
 
 </head>
@@ -142,6 +180,7 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
+
             $('#works').click(function () {
                 $('#works_page').fadeIn(500);
                 $('#works,#price,#fabrics,#contacts').fadeOut(500);
@@ -161,31 +200,30 @@
         });
     </script>
 
-    <!-- Main Page section -->
+    <!-- Main Page section                          -->
     <div id="works" class="">
         <div class="center_vh">
-            <span class="main_text" style="color:yellow">работы</span>
+            <span class="main_text">работы</span>
         </div>
     </div>
     <div id="price" class="">
         <div class="center_vh">
-            <span class="main_text" style="color:yellow">цены</span>
+            <span class="main_text">цены</span>
         </div>
     </div>
     <div id="fabrics" class="">
         <div class="center_vh">
-            <span class="main_text" style="color:red">ткани</span>
+            <span class="main_text">ткани</span>
         </div>
     </div>
     <div id="contacts" class="">
         <div class="center_vh">
-            <span class="main_text" style="color:white">контакты</span>
+            <span class="main_text">контакты</span>
         </div>
     </div>
+    <!-- Main Page section end                        --------------------- -->
 
-    <!-- Main Page section end-->
-
-    <!-- Works Page section -->
+    <!-- Works Page section                           --------------------- -->
 
     <div id="works_page" class="full_screen">
         <div id="wowslider-container1" class="center_vh">
@@ -267,7 +305,89 @@
 
     <script type="text/javascript" src="engine1/wowslider.js"></script>
     <script type="text/javascript" src="engine1/script.js"></script>
-    <!-- Works section end-->
+    <!-- Works section end                                                  --------------------- -->
+
+    <!-- Fabrics Page section                           --------------------- -->
+
+    <div id="fabrics_page" class="full_screen">
+        <div id="wowslider-container2" class="center_vh">
+            <div class="ws_images">
+                <ul>
+                    <li>
+                        <img src="data2/images/f_1.jpg" alt="f_1" title="f_1" id="wows2_0" />
+                    </li>
+                    <li>
+                        <img src="data2/images/f_10.jpg" alt="f_10" title="f_10" id="wows2_1" />
+                    </li>
+                    <li>
+                        <img src="data2/images/f_2.jpg" alt="f_2" title="f_2" id="wows2_2" />
+                    </li>
+                    <li>
+                        <img src="data2/images/f_3.jpg" alt="f_3" title="f_3" id="wows2_3" />
+                    </li>
+                    <li>
+                        <img src="data2/images/f_4.jpg" alt="f_4" title="f_4" id="wows2_4" />
+                    </li>
+                    <li>
+                        <img src="data2/images/f_5.jpg" alt="f_5" title="f_5" id="wows2_5" />
+                    </li>
+                    <li>
+                        <img src="data2/images/f_6.jpg" alt="f_6" title="f_6" id="wows2_6" />
+                    </li>
+                    <li>
+                        <img src="data2/images/f_7.jpg" alt="f_7" title="f_7" id="wows2_7" />
+                    </li>
+                    <li>
+                        <a href="http://wowslider.net">
+                            <img src="data2/images/f_8.jpg" alt="jquery carousel slider" title="f_8" id="wows2_8" />
+                        </a>
+                    </li>
+                    <li>
+                        <img src="data2/images/f_9.jpg" alt="f_9" title="f_9" id="wows2_9" />
+                    </li>
+                </ul>
+            </div>
+            <div class="ws_thumbs">
+                <div>
+                    <a href="#" title="f_1">
+                        <img src="data2/tooltips/f_1.jpg" alt="" />
+                    </a>
+                    <a href="#" title="f_10">
+                        <img src="data2/tooltips/f_10.jpg" alt="" />
+                    </a>
+                    <a href="#" title="f_2">
+                        <img src="data2/tooltips/f_2.jpg" alt="" />
+                    </a>
+                    <a href="#" title="f_3">
+                        <img src="data2/tooltips/f_3.jpg" alt="" />
+                    </a>
+                    <a href="#" title="f_4">
+                        <img src="data2/tooltips/f_4.jpg" alt="" />
+                    </a>
+                    <a href="#" title="f_5">
+                        <img src="data2/tooltips/f_5.jpg" alt="" />
+                    </a>
+                    <a href="#" title="f_6">
+                        <img src="data2/tooltips/f_6.jpg" alt="" />
+                    </a>
+                    <a href="#" title="f_7">
+                        <img src="data2/tooltips/f_7.jpg" alt="" />
+                    </a>
+                    <a href="#" title="f_8">
+                        <img src="data2/tooltips/f_8.jpg" alt="" />
+                    </a>
+                    <a href="#" title="f_9">
+                        <img src="data2/tooltips/f_9.jpg" alt="" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="engine2/wowslider.js"></script>
+    <script type="text/javascript" src="engine2/script.js"></script>
+
+    <!-- Fabrics Page end                           --------------------- -->
 
 </body>
 
