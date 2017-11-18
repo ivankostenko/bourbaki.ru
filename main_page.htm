@@ -16,6 +16,7 @@
 
     <link rel="stylesheet" type="text/css" href="engine1/style.css" />
     <link rel="stylesheet" type="text/css" href="engine2/style.css" />
+    <link rel="stylesheet" type="text/css" href="engine3/style.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
     <style>
@@ -186,7 +187,9 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
-
+            Tawk_API.onLoad = function () {
+                Tawk_API.hideWidget();
+            };
             $('#works').click(function () {
                 $('#works_page').fadeIn(500);
                 $('#works,#price,#fabrics,#contacts').fadeOut(500);
@@ -202,6 +205,7 @@
             $('#contacts').click(function () {
                 $('#contacts_page').fadeIn(500);
                 $('#works,#price,#fabrics,#contacts').fadeOut(500);
+                Tawk_API.showWidget();
             });
             $('#works_page').click(function () {
                 $('#works,#price,#fabrics,#contacts').fadeIn(500);
@@ -218,6 +222,8 @@
             $('#contacts_page').click(function () {
                 $('#works,#price,#fabrics,#contacts').fadeIn(500);
                 $('#contacts_page').fadeOut(500);
+                Tawk_API.hideWidget();
+                Tawk_API.minimize();
             });
         });
     </script>
@@ -488,12 +494,56 @@
     </div>
     <!-- Fabrics Page end                           --------------------- -->
 
-    <!-- Contacts Page section start                --------------------- -->
+    <!-- Contacts Page section                           --------------------- -->
     <div id="contacts_page" class="full_screen">
-        <div id="" class="center_vh">
+        <div id="wowslider-container3" class="center_vh">
+            <div class="ws_images">
+                <ul>
+                    <li>
+                        <img src="data3/images/ct_0.jpg" alt="г.Москва, Лялин пер. 8с1 (м. Китай-Город, м. Чистые пруды, м. Курская)"
+                            title="г.Москва, Лялин пер. 8с1 (м. Китай-Город, м. Чистые пруды, м. Курская)" id="wows3_0" />
+                    </li>
+                    <li>
+                        <img src="data3/images/ct_1.jpg" alt="тел. (495) 648-4747" title="тел. (495) 648-4747" id="wows3_1" />
+                    </li>
+                    <li>
+                        <a href="http://wowslider.net">
+                            <img src="data3/images/ct_2.jpg" alt="jquery image carousel" title="Пн-Сб: 10:00-19:00,  Вс: 11:00-17:00"
+                                id="wows3_2" />
+                        </a>
+                    </li>
+                    <li>
+                        <img src="data3/images/ct_3.jpg" alt="Email: info@bourbaki.ru" title="Email: info@bourbaki.ru" id="wows3_3"
+                        />
+                    </li>
+                </ul>
+            </div>
+            <div class="ws_script" style="position:absolute;left:-99%">
+                <a href="http://wowslider.net">javascript slideshow</a> by WOWSlider.com v8.8</div>
+            <div class="ws_shadow"></div>
         </div>
+        <script type="text/javascript" src="engine3/wowslider.js"></script>
+        <script type="text/javascript" src="engine3/script.js"></script>
     </div>
-    <!-- Contacts Page section end                --------------------- -->
+    </div>
+    <!--  Contacts end                           --------------------- -->
+
+    <!--Start of Tawk.to Script  showWidget(); hideWidget(); toggleVisibility();     -->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {},
+            Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"),
+                s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/5a1065d6198bd56b8c03bf07/default';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+
 
 </body>
 
