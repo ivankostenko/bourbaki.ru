@@ -12,17 +12,16 @@
 }
 
 .container th {
+  font-weight: normal;
   font-size: 1.2em;
   text-align: center;
   text-transform: uppercase;
-  color: rgba(67, 46, 202, 0.493);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .container td {
   font-weight: normal;
   font-size: 1.2em;
-  -webkit-box-shadow: 0 2px 2px -2px #0E1119;
-  -moz-box-shadow: 0 2px 2px -2px #0E1119;
   box-shadow: 0 2px 2px -2px #0E1119;
 }
 
@@ -42,6 +41,7 @@
 
 .container th {
   background-color: rgba(31, 39, 57, 0.2);
+  box-shadow: 0 2px 2px -2px #0E1119;
 }
 
 .container td:nth-child(1) {
@@ -53,8 +53,8 @@ td:nth-child(3) {
   text-align: center;
 }
 
-table tbody tr:hover {
-  background-color: rgba(70, 74, 82, 0.5);
+.container tbody tr:hover {
+  background-color: rgba(70, 74, 82, 0.4);
   box-shadow: 0 6px 6px -6px #0E1119;
 }
 

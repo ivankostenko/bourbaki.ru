@@ -32,6 +32,7 @@
 
         body,
         html {
+            font-family: 'Roboto Slab';
             width: 100%;
             height: 100%;
             overflow: hidden;
@@ -157,12 +158,13 @@
 
         #works_page,
         #fabrics_page,
-        #price_page {
+        #price_page,
+        #contacts_page {
             display: none;
             background: linear-gradient(270deg, #18f0b8, #18a2f0, #db5640);
             background-size: 600% 600%;
             animation: Gradient 60s ease infinite;
-            cursor: url('images/close_16_16.png'), url('close_16_16.cur'), auto;
+            cursor: url('images/close_16_16.png'), url('images/close_16_16.cur'), auto;
         }
 
         @keyframes Gradient {
@@ -197,6 +199,10 @@
                 $('#price_page').fadeIn(500);
                 $('#works,#price,#fabrics,#contacts').fadeOut(500);
             });
+            $('#contacts').click(function () {
+                $('#contacts_page').fadeIn(500);
+                $('#works,#price,#fabrics,#contacts').fadeOut(500);
+            });
             $('#works_page').click(function () {
                 $('#works,#price,#fabrics,#contacts').fadeIn(500);
                 $('#works_page').fadeOut(500);
@@ -208,6 +214,10 @@
             $('#price_page').click(function () {
                 $('#works,#price,#fabrics,#contacts').fadeIn(500);
                 $('#price_page').fadeOut(500);
+            });
+            $('#contacts_page').click(function () {
+                $('#works,#price,#fabrics,#contacts').fadeIn(500);
+                $('#contacts_page').fadeOut(500);
             });
         });
     </script>
@@ -235,7 +245,7 @@
     </div>
     <!-- Main Page section end                        --------------------- -->
 
-    <!-- Works Page section                           --------------------- -->
+    <!-- Works Page section start                     --------------------- -->
 
     <div id="works_page" class="full_screen">
         <div id="wowslider-container1" class="center_vh">
@@ -477,6 +487,13 @@
         </table>
     </div>
     <!-- Fabrics Page end                           --------------------- -->
+
+    <!-- Contacts Page section start                --------------------- -->
+    <div id="contacts_page" class="full_screen">
+        <div id="" class="center_vh">
+        </div>
+    </div>
+    <!-- Contacts Page section end                --------------------- -->
 
 </body>
 
