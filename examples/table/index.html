@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+
+	<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<style>
+	@font-face {
+		font-family: 'Roboto Slab';
+		font-style: normal;
+		font-weight: 400;
+		src: local('Roboto Slab Regular'), local('RobotoSlab-Regular'), url(https://fonts.gstatic.com/s/robotoslab/v6/y7lebkjgREBJK96VQi37ZjUj_cnvWIuuBMVgbX098Mw.woff2) format('woff2');
+		unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+	}
+
+	body {
+		font-family: Roboto Slab, sans-serif;
+	}
+
+	.center_vh {
+		position: relative;
+		float: left;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	.full_screen {
+		top: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+	}
+
+	#price_page {
+		background: linear-gradient(270deg, #18f0b8, #18a2f0, #db5640);
+		background-size: 600% 600%;
+		animation: Gradient 60s ease infinite;
+	}
+
+	@keyframes Gradient {
+		0% {
+			background-position: 0% 50%
+		}
+		50% {
+			background-position: 100% 50%
+		}
+		100% {
+			background-position: 0% 50%
+		}
+	}
+</style>
+
+<body>
+	<div id="price_page" class="full_screen">
+		<table class="container center_vh">
+			<thead>
+				<tr>
+					<th>
+						Изделие
+					</th>
+					<th>
+						Стоимость, руб.
+					</th>
+					<th>
+						Срок пошива
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Сорочка классическая, под френч</td>
+					<td>от 6000</td>
+					<td>от 14 дней</td>
+				</tr>
+				<tr>
+					<td>Сорочка под смокинг, фрак</td>
+					<td>от 9000</td>
+					<td>от 14 дней</td>
+				</tr>
+				<tr>
+					<td>Жилет</td>
+					<td>от 12000</td>
+					<td>от 14 дней</td>
+				</tr>
+				<tr>
+					<td>Пиджак классический</td>
+					<td>от 49000</td>
+					<td>от 21 дня</td>
+				</tr>
+				<tr>
+					<td>Фрак, смокинг</td>
+					<td>от 55000</td>
+					<td>от 21 дня</td>
+				</tr>
+				<tr>
+					<td>Френч</td>
+					<td>от 49000</td>
+					<td>от 21 дня</td>
+				</tr>
+				<tr>
+					<td>Брюки классические</td>
+					<td>от 10500</td>
+					<td>от 14 дней</td>
+				</tr>
+				<tr>
+					<td>Брюки к смокингу</td>
+					<td>от 14500</td>
+					<td>от 14 дней</td>
+				</tr>
+				<tr>
+					<td>Брюки к фраку</td>
+					<td>от 14500</td>
+					<td>от 14 дней</td>
+				</tr>
+				<tr>
+					<td>Пальто</td>
+					<td>от 59000</td>
+					<td>от 30 дней</td>
+				</tr>
+				<tr>
+					<td>Бабочка, галстук-пластрон</td>
+					<td>от 3000</td>
+					<td>от 5 дней</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</body>
+
+</html>

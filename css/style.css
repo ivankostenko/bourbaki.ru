@@ -1,0 +1,74 @@
+.container {
+  width: 60%;
+  display: table;
+}
+
+.container td,
+.container th {
+  padding-bottom: 1%;
+  padding-top: 1%;
+  padding-left: 2%;
+  color: rgb(1, 22, 17);
+}
+
+.container th {
+  font-size: 1.2em;
+  text-align: center;
+  text-transform: uppercase;
+  color: rgba(67, 46, 202, 0.493);
+}
+
+.container td {
+  font-weight: normal;
+  font-size: 1.2em;
+  -webkit-box-shadow: 0 2px 2px -2px #0E1119;
+  -moz-box-shadow: 0 2px 2px -2px #0E1119;
+  box-shadow: 0 2px 2px -2px #0E1119;
+}
+
+
+/* Background-color of the odd rows */
+
+.container tr:nth-child(odd) {
+  background-color: rgba(56, 70, 100, 0.2);
+}
+
+
+/* Background-color of the even rows */
+
+.container tr:nth-child(even) {
+  background-color: rgba(44, 52, 70, 0.2);
+}
+
+.container th {
+  background-color: rgba(31, 39, 57, 0.2);
+}
+
+.container td:nth-child(1) {
+  text-align: left;
+}
+
+.container td:nth-child(2),
+td:nth-child(3) {
+  text-align: center;
+}
+
+table tbody tr:hover {
+  background-color: rgba(70, 74, 82, 0.5);
+  box-shadow: 0 6px 6px -6px #0E1119;
+}
+
+.container td:hover {
+  background-color: rgba(255, 248, 66, 0.5);
+  color: rgb(66, 12, 167);
+  box-shadow: rgba(127, 124, 33, 0.5) -1px 1px, rgba(127, 124, 33, 0.5) -2px 2px, rgba(127, 124, 33, 0.5) -3px 3px, rgba(127, 124, 33, 0.5) -4px 4px, rgba(127, 124, 33, 0.5) -5px 5px, rgba(127, 124, 33, 0.5) -6px 6px;
+  transform: translate3d(6px, -6px, 0);
+  transition-delay: 0.2s;
+  transition-duration: 0.4s;
+  transition-property: all;
+  transition-timing-function: line;
+}
+
+.container {
+  cursor: hand;
+}

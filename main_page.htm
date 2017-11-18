@@ -16,6 +16,7 @@
 
     <link rel="stylesheet" type="text/css" href="engine1/style.css" />
     <link rel="stylesheet" type="text/css" href="engine2/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 
     <style>
         .disable-selection {
@@ -74,7 +75,7 @@
             font-weight: 400;
             text-align: center;
             text-transform: uppercase;
-            color:#18f0b8;
+            color: #18f0b8;
         }
 
         .img-rotate-x,
@@ -154,11 +155,14 @@
             position: absolute;
         }
 
-        #works_page, #fabrics_page {
+        #works_page,
+        #fabrics_page,
+        #price_page {
             display: none;
             background: linear-gradient(270deg, #18f0b8, #18a2f0, #db5640);
             background-size: 600% 600%;
             animation: Gradient 60s ease infinite;
+            cursor: url('images/close_16_16.png'), url('close_16_16.cur'), auto;
         }
 
         @keyframes Gradient {
@@ -189,6 +193,10 @@
                 $('#fabrics_page').fadeIn(500);
                 $('#works,#price,#fabrics,#contacts').fadeOut(500);
             });
+            $('#price').click(function () {
+                $('#price_page').fadeIn(500);
+                $('#works,#price,#fabrics,#contacts').fadeOut(500);
+            });
             $('#works_page').click(function () {
                 $('#works,#price,#fabrics,#contacts').fadeIn(500);
                 $('#works_page').fadeOut(500);
@@ -196,6 +204,10 @@
             $('#fabrics_page').click(function () {
                 $('#works,#price,#fabrics,#contacts').fadeIn(500);
                 $('#fabrics_page').fadeOut(500);
+            });
+            $('#price_page').click(function () {
+                $('#works,#price,#fabrics,#contacts').fadeIn(500);
+                $('#price_page').fadeOut(500);
             });
         });
     </script>
@@ -387,6 +399,83 @@
     <script type="text/javascript" src="engine2/wowslider.js"></script>
     <script type="text/javascript" src="engine2/script.js"></script>
 
+    <!-- Fabrics Page end                           --------------------- -->
+    <!-- Price Page start                           --------------------- -->
+
+    <div id="price_page" class="full_screen">
+        <table class="container center_vh">
+            <thead>
+                <tr>
+                    <th>
+                        Изделие
+                    </th>
+                    <th>
+                        Стоимость, руб.
+                    </th>
+                    <th>
+                        Срок пошива
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Сорочка классическая, под френч</td>
+                    <td>от 6000</td>
+                    <td>от 14 дней</td>
+                </tr>
+                <tr>
+                    <td>Сорочка под смокинг, фрак</td>
+                    <td>от 9000</td>
+                    <td>от 14 дней</td>
+                </tr>
+                <tr>
+                    <td>Жилет</td>
+                    <td>от 12000</td>
+                    <td>от 14 дней</td>
+                </tr>
+                <tr>
+                    <td>Пиджак классический</td>
+                    <td>от 49000</td>
+                    <td>от 21 дня</td>
+                </tr>
+                <tr>
+                    <td>Фрак, смокинг</td>
+                    <td>от 55000</td>
+                    <td>от 21 дня</td>
+                </tr>
+                <tr>
+                    <td>Френч</td>
+                    <td>от 49000</td>
+                    <td>от 21 дня</td>
+                </tr>
+                <tr>
+                    <td>Брюки классические</td>
+                    <td>от 10500</td>
+                    <td>от 14 дней</td>
+                </tr>
+                <tr>
+                    <td>Брюки к смокингу</td>
+                    <td>от 14500</td>
+                    <td>от 14 дней</td>
+                </tr>
+                <tr>
+                    <td>Брюки к фраку</td>
+                    <td>от 14500</td>
+                    <td>от 14 дней</td>
+                </tr>
+                <tr>
+                    <td>Пальто</td>
+                    <td>от 59000</td>
+                    <td>от 30 дней</td>
+                </tr>
+                <tr>
+                    <td>Бабочка, галстук-пластрон</td>
+                    <td>от 3000</td>
+                    <td>от 5 дней</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
     <!-- Fabrics Page end                           --------------------- -->
 
 </body>
