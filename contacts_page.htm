@@ -86,8 +86,42 @@
             }
         }
 
-        #price_page_main {
-            background: #18f0b8;
+        #goMap {
+            opacity: 0.8;
+            display: block;
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            z-index: 6;
+        }
+
+        .grayscale {
+            filter: gray;
+            -webkit-filter: grayscale(1);
+            filter: grayscale(1);
+            transition: all 0.5s ease;
+        }
+
+        .grayscale:hover {
+            -webkit-filter: grayscale(0);
+            filter: none;
+        }
+
+        .spin {
+            -webkit-animation: spin 8s linear infinite;
+            animation: spin 8s linear infinite;
+        }
+
+        @keyframes spin {
+            50% {
+                -webkit-transform: rotate(380deg);
+            }
+        }
+
+        @keyframes spin {
+            50% {
+                -webkit-transform: rotate(380deg);
+            }
         }
     </style>
 
@@ -95,33 +129,64 @@
 
 <body class="disable-selection">
 
+    <a href="javascript:void(0)" onclick="window.location.href='route.htm'">
+        <img id="goMap" class="zoom grayscale spin" style="height:70px;width:70px;" src="https://res.cloudinary.com/farm26/image/upload/v1507872973/10r_none_tjuvfi.png" />
+    </a>
+
     <script type="text/javascript">
         $(document).ready(function () {
-            Tawk_API.onLoad = function(){
+
+            $('.zoom').mouseenter(function (event) {
+                $(this).animate({
+                    zoom: '120%'
+                }, 'slow');
+            });
+            $('.zoom').mouseleave(function (event) {
+                $(this).animate({
+                    zoom: '100%'
+                }, 'slow');
+            });
+
+            Tawk_API.onLoad = function () {
                 Tawk_API.hideWidget();
             };
         });
     </script>
 
     <!-- Contacts Page section                           --------------------- -->
-    
+
     <div id="contacts_page" class="full_screen">
         <a href="javascript:void(Tawk_API.toggleVisibility())"> Click to Chat </a>
-            <!-- Start WOWSlider.com BODY section --> <!-- add to the <body> of your page -->
-	<div id="wowslider-container3" class="center_vh">
-            <div class="ws_images"><ul>
-                <li><img src="data3/images/ct_0.jpg" alt="г.Москва, Лялин пер. 8с1 (м. Китай-Город, м. Чистые пруды, м. Курская)" title="г.Москва, Лялин пер. 8с1 (м. Китай-Город, м. Чистые пруды, м. Курская)" id="wows3_0"/></li>
-                <li><img src="data3/images/ct_1.jpg" alt="тел. (495) 648-4747" title="тел. (495) 648-4747" id="wows3_1"/></li>
-                <li><a href="http://wowslider.net"><img src="data3/images/ct_2.jpg" alt="jquery image carousel" title="Пн-Сб: 10:00-19:00,  Вс: 11:00-17:00" id="wows3_2"/></a></li>
-                <li><img src="data3/images/ct_3.jpg" alt="Email: info@bourbaki.ru" title="Email: info@bourbaki.ru" id="wows3_3"/></li>
-            </ul></div>
-        <div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.net">javascript slideshow</a> by WOWSlider.com v8.8</div>
+        <!-- Start WOWSlider.com BODY section -->
+        <!-- add to the <body> of your page -->
+        <div id="wowslider-container3" class="center_vh">
+            <div class="ws_images">
+                <ul>
+                    <li>
+                        <img src="data3/images/ct_0.jpg" alt="г.Москва, Лялин пер. 8с1 (м. Китай-Город, м. Чистые пруды, м. Курская)" title="г.Москва, Лялин пер. 8с1 (м. Китай-Город, м. Чистые пруды, м. Курская)"
+                            id="wows3_0" />
+                    </li>
+                    <li>
+                        <img src="data3/images/ct_1.jpg" alt="тел. (495) 648-4747" title="тел. (495) 648-4747" id="wows3_1" />
+                    </li>
+                    <li>
+                        <a href="http://wowslider.net">
+                            <img src="data3/images/ct_2.jpg" alt="jquery image carousel" title="Пн-Сб: 10:00-19:00,  Вс: 11:00-17:00" id="wows3_2" />
+                        </a>
+                    </li>
+                    <li>
+                        <img src="data3/images/ct_3.jpg" alt="Email: info@bourbaki.ru" title="Email: info@bourbaki.ru" id="wows3_3" />
+                    </li>
+                </ul>
+            </div>
+            <div class="ws_script" style="position:absolute;left:-99%">
+                <a href="http://wowslider.net">javascript slideshow</a> by WOWSlider.com v8.8</div>
             <div class="ws_shadow"></div>
-            </div>	
-            <script type="text/javascript" src="engine3/wowslider.js"></script>
-            <script type="text/javascript" src="engine3/script.js"></script>
-            <!-- End WOWSlider.com BODY section -->
         </div>
+        <script type="text/javascript" src="engine3/wowslider.js"></script>
+        <script type="text/javascript" src="engine3/script.js"></script>
+        <!-- End WOWSlider.com BODY section -->
+    </div>
     </div>
 
     <!--  Contacts end                           --------------------- -->

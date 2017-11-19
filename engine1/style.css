@@ -282,25 +282,27 @@
 #wowslider-container1 .ws-title{
 	position: absolute;
     font: 1.8em 'Open Sans', sans-serif;
-	bottom:10%;
+	bottom:7%;
 	left: 0;
-	margin: 0 0.5em 1em 0;
+	margin: 0 0.5em 0.8em 0;
 	z-index: 50;
-	padding:0.7em;
 	color: #000000;
 	text-transform:uppercase;
+	line-height: 1.2em;	
+}
+#wowslider-container1 .ws-title div,#wowslider-container1 .ws-title span{
+	display:inline-block;
+	padding:0.6em;
 	background:#fff;
-	line-height: 1.2em;
-	font-weight: bold;	
 	border-radius:0 0.4em 0.4em 0;	
 	-moz-border-radius:0 0.4em 0.4em 0;
  	-webkit-border-radius:0 0.4em 0.4em 0;
 	opacity:0.8;
-	filter:progid:DXImageTransform.Microsoft.Alpha(opacity=80);
-	box-shadow: 0.1em 0 0.2em #000000;
+	filter:progid:DXImageTransform.Microsoft.Alpha(opacity=80);	
 }
 #wowslider-container1 .ws-title div{
-	padding-top:0.25em;
+	display:block;
+	margin-top:0.5em;
 	font-size: 0.77em;
 	font-weight: normal;
 	text-transform:none;
@@ -366,26 +368,14 @@
 	opacity: 0.6;
 }
 
-#wowslider-container1 a.ws_next,
-#wowslider-container1 a.ws_prev,
-#wowslider-container1 .ws_playpause {
-	display:none;
+#wowslider-container1 .ws_images > ul{
+	animation: wsBasic 48s infinite;
+	-moz-animation: wsBasic 48s infinite;
+	-webkit-animation: wsBasic 48s infinite;
 }
-
-* html #wowslider-container1 a.ws_next,* html #wowslider-container1 a.ws_prev{display:block}
-
-#wowslider-container1:hover a.ws_next,
-#wowslider-container1:hover a.ws_prev,
-#wowslider-container1:hover .ws_playpause {
-	display:block
-}#wowslider-container1 .ws_images > ul{
-	animation: wsBasic 40s infinite;
-	-moz-animation: wsBasic 40s infinite;
-	-webkit-animation: wsBasic 40s infinite;
-}
-@keyframes wsBasic{0%{left:-0%} 5%{left:-0%} 10%{left:-100%} 15%{left:-100%} 20%{left:-200%} 25%{left:-200%} 30%{left:-300%} 35%{left:-300%} 40%{left:-400%} 45%{left:-400%} 50%{left:-500%} 55%{left:-500%} 60%{left:-600%} 65%{left:-600%} 70%{left:-700%} 75%{left:-700%} 80%{left:-800%} 85%{left:-800%} 90%{left:-900%} 95%{left:-900%} }
-@-moz-keyframes wsBasic{0%{left:-0%} 5%{left:-0%} 10%{left:-100%} 15%{left:-100%} 20%{left:-200%} 25%{left:-200%} 30%{left:-300%} 35%{left:-300%} 40%{left:-400%} 45%{left:-400%} 50%{left:-500%} 55%{left:-500%} 60%{left:-600%} 65%{left:-600%} 70%{left:-700%} 75%{left:-700%} 80%{left:-800%} 85%{left:-800%} 90%{left:-900%} 95%{left:-900%} }
-@-webkit-keyframes wsBasic{0%{left:-0%} 5%{left:-0%} 10%{left:-100%} 15%{left:-100%} 20%{left:-200%} 25%{left:-200%} 30%{left:-300%} 35%{left:-300%} 40%{left:-400%} 45%{left:-400%} 50%{left:-500%} 55%{left:-500%} 60%{left:-600%} 65%{left:-600%} 70%{left:-700%} 75%{left:-700%} 80%{left:-800%} 85%{left:-800%} 90%{left:-900%} 95%{left:-900%} }
+@keyframes wsBasic{0%{left:-0%} 4.17%{left:-0%} 8.33%{left:-100%} 12.5%{left:-100%} 16.67%{left:-200%} 20.83%{left:-200%} 25%{left:-300%} 29.17%{left:-300%} 33.33%{left:-400%} 37.5%{left:-400%} 41.67%{left:-500%} 45.83%{left:-500%} 50%{left:-600%} 54.17%{left:-600%} 58.33%{left:-700%} 62.5%{left:-700%} 66.67%{left:-800%} 70.83%{left:-800%} 75%{left:-900%} 79.17%{left:-900%} 83.33%{left:-1000%} 87.5%{left:-1000%} 91.67%{left:-1100%} 95.83%{left:-1100%} }
+@-moz-keyframes wsBasic{0%{left:-0%} 4.17%{left:-0%} 8.33%{left:-100%} 12.5%{left:-100%} 16.67%{left:-200%} 20.83%{left:-200%} 25%{left:-300%} 29.17%{left:-300%} 33.33%{left:-400%} 37.5%{left:-400%} 41.67%{left:-500%} 45.83%{left:-500%} 50%{left:-600%} 54.17%{left:-600%} 58.33%{left:-700%} 62.5%{left:-700%} 66.67%{left:-800%} 70.83%{left:-800%} 75%{left:-900%} 79.17%{left:-900%} 83.33%{left:-1000%} 87.5%{left:-1000%} 91.67%{left:-1100%} 95.83%{left:-1100%} }
+@-webkit-keyframes wsBasic{0%{left:-0%} 4.17%{left:-0%} 8.33%{left:-100%} 12.5%{left:-100%} 16.67%{left:-200%} 20.83%{left:-200%} 25%{left:-300%} 29.17%{left:-300%} 33.33%{left:-400%} 37.5%{left:-400%} 41.67%{left:-500%} 45.83%{left:-500%} 50%{left:-600%} 54.17%{left:-600%} 58.33%{left:-700%} 62.5%{left:-700%} 66.67%{left:-800%} 70.83%{left:-800%} 75%{left:-900%} 79.17%{left:-900%} 83.33%{left:-1000%} 87.5%{left:-1000%} 91.67%{left:-1100%} 95.83%{left:-1100%} }
 
 #wowslider-container1 .ws_bullets  a img{
 	text-indent:0;
