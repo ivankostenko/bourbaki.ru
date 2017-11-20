@@ -13,6 +13,8 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <script src="js/routes_to_point.js" type="text/javascript"></script>
 
     <link rel="stylesheet" type="text/css" href="engine1/style.css" />
     <link rel="stylesheet" type="text/css" href="engine2/style.css" />
@@ -68,10 +70,13 @@
             position: absolute;
         }
 
-        #contacts_page {
+        #contacts_page,#route_page {
             background: linear-gradient(270deg, #18f0b8, #18a2f0, #db5640);
             background-size: 600% 600%;
             animation: Gradient 60s ease infinite;
+        }
+        #route_page {
+            display: none;
         }
 
         @keyframes Gradient {
@@ -92,7 +97,13 @@
             position: fixed;
             bottom: 10px;
             left: 10px;
-            z-index: 6;
+            height:80px;
+            width:80px;
+            z-index: 9999;
+        }
+        #goMap:hover {
+            height:279px;
+            width:279px;
         }
 
         .grayscale {
@@ -108,8 +119,7 @@
         }
 
         .spin {
-            -webkit-animation: spin 8s linear infinite;
-            animation: spin 8s linear infinite;
+            animation: spin 12s linear infinite;
         }
 
         @keyframes spin {
@@ -122,6 +132,35 @@
             50% {
                 -webkit-transform: rotate(380deg);
             }
+        }
+
+        h2 {
+        font-family: sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: 400;
+        line-height: 18px;
+        color: rgba(0,0,160,1);
+        text-shadow: 1px 1px 1px #d0d0d0;
+        cursor: default;
+        }
+    #map {
+         width: 100%;
+         height: 100%;
+         }
+    .problem {text-align:center}
+    .enclose {position:fixed;bottom:8px;width:100%;}
+    
+    #goBack {
+            opacity: 0.8;
+            display: block;
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            height:80px;
+            width:80px;
+            z-index: 9999;
         }
     </style>
 
@@ -129,27 +168,25 @@
 
 <body class="disable-selection">
 
-    <a href="javascript:void(0)" onclick="window.location.href='route.htm'">
-        <img id="goMap" class="zoom grayscale spin" style="height:70px;width:70px;" src="https://res.cloudinary.com/farm26/image/upload/v1507872973/10r_none_tjuvfi.png" />
-    </a>
+        <img id="goMap" class="grayscale spin" src="images/map_shadow.png" />
 
     <script type="text/javascript">
         $(document).ready(function () {
 
-            $('.zoom').mouseenter(function (event) {
-                $(this).animate({
-                    zoom: '120%'
-                }, 'slow');
-            });
-            $('.zoom').mouseleave(function (event) {
-                $(this).animate({
-                    zoom: '100%'
-                }, 'slow');
-            });
-
             Tawk_API.onLoad = function () {
                 Tawk_API.hideWidget();
             };
+
+            $('#goMap').click(function () {
+                $('#route_page').fadeIn(500);
+                $('#contacts_page,#goMap').fadeOut(500);
+                Tawk_API.hideWidget();
+            });
+            $('#goBack').click(function () {
+                $('#route_page').fadeOut(500);
+                $('#contacts_page,#goMap').fadeIn(500);
+                Tawk_API.showWidget();
+            });
         });
     </script>
 
@@ -160,27 +197,13 @@
         <!-- Start WOWSlider.com BODY section -->
         <!-- add to the <body> of your page -->
         <div id="wowslider-container3" class="center_vh">
-            <div class="ws_images">
-                <ul>
-                    <li>
-                        <img src="data3/images/ct_0.jpg" alt="г.Москва, Лялин пер. 8с1 (м. Китай-Город, м. Чистые пруды, м. Курская)" title="г.Москва, Лялин пер. 8с1 (м. Китай-Город, м. Чистые пруды, м. Курская)"
-                            id="wows3_0" />
-                    </li>
-                    <li>
-                        <img src="data3/images/ct_1.jpg" alt="тел. (495) 648-4747" title="тел. (495) 648-4747" id="wows3_1" />
-                    </li>
-                    <li>
-                        <a href="http://wowslider.net">
-                            <img src="data3/images/ct_2.jpg" alt="jquery image carousel" title="Пн-Сб: 10:00-19:00,  Вс: 11:00-17:00" id="wows3_2" />
-                        </a>
-                    </li>
-                    <li>
-                        <img src="data3/images/ct_3.jpg" alt="Email: info@bourbaki.ru" title="Email: info@bourbaki.ru" id="wows3_3" />
-                    </li>
-                </ul>
-            </div>
-            <div class="ws_script" style="position:absolute;left:-99%">
-                <a href="http://wowslider.net">javascript slideshow</a> by WOWSlider.com v8.8</div>
+                <div class="ws_images"><ul>
+                        <li><img src="data3/images/ct_0.jpg" alt="г.Москва, Лялин пер. 8с1 (м. Китай-Город, м. Чистые пруды, м. Курская)" title="г.Москва, Лялин пер. 8с1 (м. Китай-Город, м. Чистые пруды, м. Курская)" id="wows3_0"/></li>
+                        <li><img src="data3/images/ct_1.jpg" alt="тел. (495) 648-4747" title="тел. (495) 648-4747" id="wows3_1"/></li>
+                        <li><img src="data3/images/ct_2.jpg" alt="Пн-Сб: 10:00-19:00,  Вс: 11:00-17:00" title="Пн-Сб: 10:00-19:00,  Вс: 11:00-17:00" id="wows3_2"/></li>
+                        <li><a href="http://wowslider.net"><img src="data3/images/ct_3.jpg" alt="javascript photo gallery" title="Email: info@bourbaki.ru" id="wows3_3"/></a></li>
+                        <li><img src="data3/images/ct_5.jpg" alt="Отличный подарок - подарочный сертификат" title="Отличный подарок - подарочный сертификат" id="wows3_4"/></li>
+                    </ul></div>            
             <div class="ws_shadow"></div>
         </div>
         <script type="text/javascript" src="engine3/wowslider.js"></script>
@@ -190,6 +213,14 @@
     </div>
 
     <!--  Contacts end                           --------------------- -->
+    <!-- Route Page section                           --------------------- -->
+
+    <div id="route_page" class="full_screen">
+        <div id="map"><img id="goBack" class="grayscale" src="images/back.png" /></div>
+        <h2 class="enclose problem">Выберите способ как добраться через стрелку &#x25BC; наверху или выберите место на карте откуда, а потом способ</h2>
+    </div>
+    
+    <!--  Route end                           --------------------- -->
 
     <!--Start of Tawk.to Script  showWidget(); hideWidget(); toggleVisibility();     -->
     <script type="text/javascript">
