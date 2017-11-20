@@ -22,6 +22,10 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
     <style>
+        @media all and (orientation:portrait) {
+            body {}
+        }
+
         @font-face {
             font-family: 'Roboto Slab';
             font-style: normal;
@@ -338,6 +342,9 @@
             height: 100px;
             width: 100px;
         }
+
+        #works_portrait {
+        }
     </style>
 
 </head>
@@ -348,6 +355,21 @@
         $(document).ready(function (e) {
 
             var hist = [];
+
+            function is_mobile() {
+                return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !==
+                    -1);
+            };
+
+            function is_portrait() {
+                var orientation = screen.orientation.type;
+                var is = orientation.indexOf('port') !== -1;
+                return is;
+            }
+
+            $(window).on("orientationchange", function () {
+                console.log(is_landscape());
+            });
 
             function show_page(page_id_show, page_id_hide, chat_show) {
                 $(page_id_show).fadeIn(500);
@@ -379,31 +401,40 @@
                     hide: '#works_page',
                     chat: null
                 });
+                if (is_portrait()) {
+                    show_portrait('data1/images/w_1.jpg');
+                }
             });
             $('#fabrics').click(function (e) {
-                show_page('#fabrics_page', '#menu_page');
-                hist.push({
-                    show: '#menu_page',
-                    hide: '#fabrics_page',
-                    chat: null
-                });
+                if (is_landscape()) {
+                    show_page('#fabrics_page', '#menu_page');
+                    hist.push({
+                        show: '#menu_page',
+                        hide: '#fabrics_page',
+                        chat: null
+                    });
+                }
             });
             $('#price').click(function (e) {
-                show_page('#price_page', '#menu_page');
-                hist.push({
-                    show: '#menu_page',
-                    hide: '#price_page',
-                    chat: null
-                });
+                if (is_landscape()) {
+                    show_page('#price_page', '#menu_page');
+                    hist.push({
+                        show: '#menu_page',
+                        hide: '#price_page',
+                        chat: null
+                    });
+                }
             });
             $('#contacts').click(function (e) {
-                show_page('#contacts_page,#goMap', '#menu_page');
-                hist.push({
-                    show: '#menu_page',
-                    hide: '#contacts_page,#goMap',
-                    chat: null
-                });
-                Tawk_API.showWidget();
+                if (is_landscape()) {
+                    show_page('#contacts_page,#goMap', '#menu_page');
+                    hist.push({
+                        show: '#menu_page',
+                        hide: '#contacts_page,#goMap',
+                        chat: null
+                    });
+                    Tawk_API.showWidget();
+                }
             });
             $('#works_page').click(function (e) {
                 show_page('#menu_page', '#works_page');
