@@ -8,7 +8,68 @@
 // Obfuscated by Javascript Obfuscator
 // http://javascript-source.com
 //***********************************************
-function ws_fly(c,a,b){var e=jQuery;var f=e(this);var h={position:"absolute",left:0,top:0,width:"100%",height:"100%",transform:"translate3d(0,0,0)"};var d=b.find(".ws_list");var g=e("<div>").addClass("ws_effect ws_fly").css(h).css({overflow:"visible"}).appendTo(b);this.go=function(p,m,l){if(l==undefined){l=!!c.revers}else{l=!l}var k=-(c.distance||g.width()/4),n=Math.min(-k,Math.max(0,e(window).width()-g.offset().left-g.width())),i=(l?n:k),q=(l?k:n);var j=e(a.get(m));j={width:j.width(),height:j.height()};var r=e("<div>").css(h).css({"z-index":1,overflow:"hidden"}).html(e(a.get(m)).clone().css(j)).appendTo(g);var o=e("<div>").css(h).css({"z-index":3,overflow:"hidden"}).html(e(a.get(p)).clone().css(j)).appendTo(g).show();wowAnimate(o,{opacity:0},{opacity:1},c.duration);wowAnimate(o,{left:i},{left:0},2*c.duration/3);d.hide();wowAnimate(r,{left:0,opacity:1},{left:q,opacity:0},2*c.duration/3,c.duration/3,function(){r.remove();f.trigger("effectEnd");o.remove()})}};// -----------------------------------------------------------------------------------
+function ws_fly(c, a, b) {
+    var e = jQuery;
+    var f = e(this);
+    var h = {
+        position: "absolute",
+        left: 0,
+        top: 0,
+        width: "100%",
+        height: "100%",
+        transform: "translate3d(0,0,0)"
+    };
+    var d = b.find(".ws_list");
+    var g = e("<div>").addClass("ws_effect ws_fly").css(h).css({
+        overflow: "visible"
+    }).appendTo(b);
+    this.go = function (p, m, l) {
+        if (l == undefined) {
+            l = !!c.revers
+        } else {
+            l = !l
+        }
+        var k = -(c.distance || g.width() / 4),
+            n = Math.min(-k, Math.max(0, e(window).width() - g.offset().left - g.width())),
+            i = (l ? n : k),
+            q = (l ? k : n);
+        var j = e(a.get(m));
+        j = {
+            width: j.width(),
+            height: j.height()
+        };
+        var r = e("<div>").css(h).css({
+            "z-index": 1,
+            overflow: "hidden"
+        }).html(e(a.get(m)).clone().css(j)).appendTo(g);
+        var o = e("<div>").css(h).css({
+            "z-index": 3,
+            overflow: "hidden"
+        }).html(e(a.get(p)).clone().css(j)).appendTo(g).show();
+        wowAnimate(o, {
+            opacity: 0
+        }, {
+            opacity: 1
+        }, c.duration);
+        wowAnimate(o, {
+            left: i
+        }, {
+            left: 0
+        }, 2 * c.duration / 3);
+        d.hide();
+        wowAnimate(r, {
+            left: 0,
+            opacity: 1
+        }, {
+            left: q,
+            opacity: 0
+        }, 2 * c.duration / 3, c.duration / 3, function () {
+            r.remove();
+            f.trigger("effectEnd");
+            o.remove()
+        })
+    }
+}; // -----------------------------------------------------------------------------------
 // http://wowslider.com/
 // JavaScript Wow Slider is a free software that helps you easily generate delicious 
 // slideshows with gorgeous transition effects, in a few clicks without writing a single line of code.
@@ -18,4 +79,64 @@ function ws_fly(c,a,b){var e=jQuery;var f=e(this);var h={position:"absolute",lef
 // Obfuscated by Javascript Obfuscator
 // http://javascript-source.com
 //***********************************************
-jQuery("#wowslider-container2").wowSlider({effect:"fly",prev:"",next:"",duration:20*100,delay:30*100,width:900,height:600,autoPlay:true,autoPlayVideo:false,playPause:false,stopOnHover:false,loop:false,bullets:0,caption:true,captionEffect:"parallax",controls:false,controlsThumb:false,responsive:1,fullScreen:false,gestures:2,onBeforeStep:0,images:[{src:"./f_1.jpg",title:""},{src:"./f_10.jpg",title:""},{src:"./f_2.jpg",title:""},{src:"./f_3.jpg",title:""},{src:"./f_4.jpg",title:""},{src:"./f_5.jpg",title:""},{src:"./f_6.jpg",title:""},{src:"./f_7.jpg",title:""},{src:"./f_8.jpg",title:""},{src:"./f_9.jpg",title:""},{src:"./w_11.jpg",title:"",href:"http://wowslider.net"},{src:"./w_12.jpg",title:""}]});
+jQuery("#wowslider-container2").wowSlider({
+    effect: "fly",
+    prev: "",
+    next: "",
+    duration: 20 * 100,
+    delay: 30 * 100,
+    width: 900,
+    height: 600,
+    autoPlay: true,
+    autoPlayVideo: false,
+    playPause: false,
+    stopOnHover: false,
+    loop: false,
+    bullets: 0,
+    caption: true,
+    captionEffect: "parallax",
+    controls: false,
+    controlsThumb: false,
+    responsive: 1,
+    fullScreen: false,
+    gestures: 2,
+    onBeforeStep: 0,
+    images: [{
+        src: "https://res.cloudinary.com/farm26/image/upload/v1511291779/f_1_lusvwo.jpg",
+        title: ""
+    }, {
+        src: "https://res.cloudinary.com/farm26/image/upload/v1511291780/f_10_nqxyrh.jpg",
+        title: ""
+    }, {
+        src: "https://res.cloudinary.com/farm26/image/upload/v1511291779/f_2_xsit0i.jpg",
+        title: ""
+    }, {
+        src: "https://res.cloudinary.com/farm26/image/upload/v1511291779/f_3_uyqdrn.jpg",
+        title: ""
+    }, {
+        src: "https://res.cloudinary.com/farm26/image/upload/v1511291779/f_4_u8a5ph.jpg",
+        title: ""
+    }, {
+        src: "https://res.cloudinary.com/farm26/image/upload/v1511291779/f_5_gncjjd.jpg",
+        title: ""
+    }, {
+        src: "https://res.cloudinary.com/farm26/image/upload/v1511291779/f_6_dqdchn.jpg",
+        title: ""
+    }, {
+        src: "https://res.cloudinary.com/farm26/image/upload/v1511291779/f_7_xji9xj.jpg",
+        title: ""
+    }, {
+        src: "https://res.cloudinary.com/farm26/image/upload/v1511291780/f_8_u6zbyu.jpg",
+        title: ""
+    }, {
+        src: "https://res.cloudinary.com/farm26/image/upload/v1511291780/f_9_vwlyij.jpg",
+        title: ""
+    }, {
+        src: "http://res.cloudinary.com/farm26/image/upload/v1511291780/w_11_ecz0bo.jpg",
+        title: "",
+        href: ""
+    }, {
+        src: "https://res.cloudinary.com/farm26/image/upload/v1511291781/w_12_nyauhx.jpg",
+        title: ""
+    }]
+});
