@@ -132,7 +132,7 @@ jQuery("#wowslider-container2").wowSlider({
         src: "https://res.cloudinary.com/farm26/image/upload/v1511291780/f_9_vwlyij.jpg",
         title: ""
     }, {
-        src: "http://res.cloudinary.com/farm26/image/upload/v1511291780/w_11_ecz0bo.jpg",
+        src: "https://res.cloudinary.com/farm26/image/upload/v1511291780/w_11_ecz0bo.jpg",
         title: "",
         href: ""
     }, {
