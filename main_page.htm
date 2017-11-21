@@ -57,8 +57,11 @@
             margin: 0;
         }
 
-        body,
         html {
+            min-height: 100vh;
+        }
+
+        body {
             font-family: 'Roboto Slab', sans-serif;
             width: 100%;
             height: 100%;
@@ -394,10 +397,10 @@
 
             $(window).on("orientationchange", function () {
                 if (!is_portrait()) {
-                    $('#works_portrait').fadeOut(10);
+                    $('#works_portrait').hide();
                 } else {
-                    $('#works_portrait').fadeIn(10);
-                    $('#works_portrait').css('height', '100%');
+                    $('#works_portrait').show();
+                    $('#works_portrait').css('height', '100vh');
                 }
             });
 
@@ -432,7 +435,7 @@
                     chat: null
                 });
                 if (is_portrait()) {
-                    $('#works_portrait').fadeIn(10);
+                    $('#works_portrait').show();
                 }
             });
             $('#fabrics').click(function (e) {
@@ -443,7 +446,7 @@
                     chat: null
                 });
                 if (is_portrait()) {
-                    $('#works_portrait').fadeIn(10);
+                    $('#works_portrait').show();
                 }
             });
             $('#price').click(function (e) {
@@ -454,7 +457,7 @@
                     chat: null
                 });
                 if (is_portrait()) {
-                    $('#works_portrait').fadeIn(10);
+                    $('#works_portrait').show();
                 }
             });
             $('#contacts').click(function (e) {
@@ -466,7 +469,7 @@
                 });
                 Tawk_API.showWidget();
                 if (is_portrait()) {
-                    $('#works_portrait').fadeIn(10);
+                    $('#works_portrait').show();
                 }
 
             });
