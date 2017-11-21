@@ -1,4 +1,20 @@
+@media all and (min-width:960px) {
+  .container {
+    font-size: 1.2em;
+  }
+
+}
+@media all and (max-width:960px) {
+  .container {
+    font-size: 2vw;
+  }
+  .container td,
+  .container th {
+    color: rgb(255, 255, 27) !important;
+  }
+}
 .container {
+  font-weight: normal;
   width: 60%;
   display: table;
 }
@@ -12,16 +28,12 @@
 }
 
 .container th {
-  font-weight: normal;
-  font-size: 1.2em;
   text-align: center;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.5);
 }
 
 .container td {
-  font-weight: normal;
-  font-size: 1.2em;
   box-shadow: 0 2px 2px -2px #0E1119;
 }
 

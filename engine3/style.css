@@ -306,15 +306,20 @@
 	font-size: 0.77em;
 	font-weight: normal;
 	text-transform:none;
-}#wowslider-container3 .ws_images > ul{
-	animation: wsBasic 40s infinite;
-	-moz-animation: wsBasic 40s infinite;
-	-webkit-animation: wsBasic 40s infinite;
+}#wowslider-container3  .ws_logo{
+	position: absolute;
+	left:0;
+	top:0;
+	height: 100%;
+	width: 100%;
+	z-index: 9;
+	background: url(./loading.gif) 50% 50% no-repeat;
 }
-@keyframes wsBasic{0%{left:-0%} 10%{left:-0%} 20%{left:-100%} 30%{left:-100%} 40%{left:-200%} 50%{left:-200%} 60%{left:-300%} 70%{left:-300%} 80%{left:-400%} 90%{left:-400%} }
-@-moz-keyframes wsBasic{0%{left:-0%} 10%{left:-0%} 20%{left:-100%} 30%{left:-100%} 40%{left:-200%} 50%{left:-200%} 60%{left:-300%} 70%{left:-300%} 80%{left:-400%} 90%{left:-400%} }
-@-webkit-keyframes wsBasic{0%{left:-0%} 10%{left:-0%} 20%{left:-100%} 30%{left:-100%} 40%{left:-200%} 50%{left:-200%} 60%{left:-300%} 70%{left:-300%} 80%{left:-400%} 90%{left:-400%} }
-
+#wowslider-container3  img.loading{
+	width:72px;
+	height:48px;
+	background: url(./loading.gif) 50% 50% no-repeat;
+}
 #wowslider-container3 .ws_bulframe div div{
 	height: auto;
 }
