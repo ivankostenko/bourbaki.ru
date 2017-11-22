@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<style>
+		@font-face {
+			font-family: 'Roboto Slab';
+			font-style: normal;
+			font-weight: 400;
+			src: local('Roboto Slab Regular'), local('RobotoSlab-Regular'), url(https://fonts.gstatic.com/s/robotoslab/v6/y7lebkjgREBJK96VQi37ZjUj_cnvWIuuBMVgbX098Mw.woff2) format('woff2');
+			unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+		}
+
+		body {
+			overflow: hidden;
+			cursor: pointer;
+		}
+
+		@media all and (min-width: 960px) {
+			h1,
+			.main_text {
+				font-size: 60px;
+			}
+		}
+
+		@media all and (max-width: 959px) and (min-width: 600px) {
+			h1,
+			.main_text {
+				font-size: 6vw;
+			}
+		}
+
+		@media all and (max-width: 599px) and (min-width: 50px) {
+			h1,
+			.main_text {
+				font-size: 7vw;
+			}
+		}
+
+		h1 {
+			font-family: Roboto Slab, sans-serif;
+			font-style: normal;
+			font-variant: normal;
+			font-weight: 400;
+			line-height: 100px;
+			color: white;
+			text-align: center;
+			text-transform: uppercase;
+			text-shadow: 0 1px 0 #ccc,
+			0 2px 0 #c9c9c9,
+			0 3px 0 #bbb,
+			0 4px 0 #b9b9b9,
+			0 5px 0 #aaa,
+			0 6px 1px rgba(0, 0, 0, 0.2),
+			0 0px 5px rgba(0, 0, 0, 0.2),
+			0 1px 3px rgba(0, 0, 0, 0.4),
+			0 3px 5px rgba(0, 0, 0, 0.3),
+			0 5px 10px rgba(0, 0, 0, 0.35),
+			0 10px 10px rgba(0, 0, 0, 0.3),
+			0 20px 20px rgba(0, 0, 0, 0.25);
+		}
+
+		#info {
+			position: absolute;
+			top: 0px;
+			width: 100%;
+		}
+	</style>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="js/three.min.js"></script>
+	<script src="js/Projector.js"></script>
+	<script src="js/CanvasRenderer.js"></script>
+
+</head>
+
+<body>
+
+	<div id="container"></div>
+	<div id="info">
+		<span id="options"></span>
+	</div>
+
+	<div id="main_page" class="full_screen">
+		<marquee id="lenta" style="position: fixed; bottom: 0px; left:0px;" direction="left " behavior="
+		" truespeed scrollamount="" scrolldelay="40 " onmouseover="this.stop(); " onmouseout="this.start(); ">
+			<div style="display: flex;align-items: center;">
+				<!-- <img  class="" style="z-index: -9999;" src="images/scs_a.webp " height=100 /> -->
+				<h1>
+					&nbsp;&nbsp;Бескомпромиссное качество классической мужской одежды bespoke с 2006 года, Костюм на заказ, Сорочка на заказ,
+					Пальто на заказ в ателье Москва
+				</h1>
+			</div>
+		</marquee>
+	</div>
+
+	<script>
+		var container, stats;
+		var camera, scene, renderer;
+		var group;
+		var mouseX = 0,
+			mouseY = 0;
+
+		var windowHalfX = $(window).width() / 2;
+		var windowHalfY = $(window.top).height() / 2;
+
+		init();
+		animate();
+
+
+		function init() {
+
+			container = document.getElementById('container');
+
+			camera = new THREE.PerspectiveCamera(60, $(window).width() / $(window.top).height(), 1, 2000);
+			camera.position.z = 500;
+
+			scene = new THREE.Scene();
+
+			group = new THREE.Group();
+			scene.add(group);
+
+
+
+			var loader = new THREE.TextureLoader();
+			loader.load('https://res.cloudinary.com/farm26/image/upload/v1499098975/test2_h4mfxr.jpg', function (texture) {
+
+				var geometry = new THREE.SphereGeometry(200, 25, 25);
+
+				var material = new THREE.MeshBasicMaterial({
+					map: texture,
+					overdraw: 0.5
+				});
+				var mesh = new THREE.Mesh(geometry, material);
+				group.add(mesh);
+
+			});
+
+
+
+			var canvas = document.createElement('canvas');
+			canvas.width = 128;
+			canvas.height = 128;
+
+			var context = canvas.getContext('2d');
+			var gradient = context.createRadialGradient(
+				canvas.width / 2,
+				canvas.height / 2,
+				0,
+				canvas.width / 2,
+				canvas.height / 2,
+				canvas.width / 2
+			);
+			gradient.addColorStop(0.1, 'rgba(210,210,210,1)');
+			gradient.addColorStop(1, 'rgba(255,255,255,1)');
+
+			context.fillStyle = gradient;
+			context.fillRect(0, 0, canvas.width, canvas.height);
+
+			var texture = new THREE.CanvasTexture(canvas);
+
+			var geometry = new THREE.PlaneBufferGeometry(300, 300, 3, 3);
+			var material = new THREE.MeshBasicMaterial({
+				map: texture,
+				overdraw: 0.5
+			});
+
+			var mesh = new THREE.Mesh(geometry, material);
+			mesh.position.y = -250;
+			mesh.rotation.x = -Math.PI / 2;
+			group.add(mesh);
+
+			renderer = new THREE.CanvasRenderer();
+			renderer.setClearColor(0xffffff);
+			renderer.setPixelRatio(window.devicePixelRatio);
+			renderer.setSize($(window).width(), $(window.top).height());
+			container.appendChild(renderer.domElement);
+
+			document.addEventListener('mousemove', onDocumentMouseMove, false);
+
+			window.addEventListener('resize', onWindowResize, false);
+
+			var options = "Some TEXT";
+
+			document.getElementById('options').innerHTML = options;
+		}
+
+		function onWindowResize() {
+
+			windowHalfX = $(window).width() / 2;
+			windowHalfY = $(window.top).height() / 2;
+
+			camera.aspect = $(window).width() / $(window.top).height();
+			camera.updateProjectionMatrix();
+
+			renderer.setSize($(window).width(), $(window.top).height());
+			//console.log($(window).width() + ' ' + $(window.top).height());
+		}
+
+		function onDocumentMouseMove(event) {
+
+			mouseX = (event.clientX - windowHalfX);
+			mouseY = (event.clientY - windowHalfY);
+
+		}
+
+
+		function animate() {
+			requestAnimationFrame(animate);
+			render();
+		}
+
+		function render() {
+
+			camera.position.x += (mouseX - camera.position.x) * 0.05;
+			camera.position.y += (-mouseY - camera.position.y) * 0.05;
+			camera.lookAt(scene.position);
+
+			group.rotation.y -= 0.005;
+
+			renderer.render(scene, camera);
+
+		}
+	</script>
+</body>
+
+</html>
