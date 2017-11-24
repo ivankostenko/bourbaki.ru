@@ -499,6 +499,7 @@
             }
 
             $('#main_page').click(function (e) {
+                $('#logo').css('transform','rotateY(180deg)');
                 show_page('#menu_page', '#main_page');
                 hist.push({
                     show: '#main_page',
@@ -595,21 +596,16 @@
         });
     </script>
 
-    <div id="main_page" class="full_screen">
-        <div class="container img-rotate-y">
-            <picture id="img_scs">
-                <!-- <source srcset="https://res.cloudinary.com/farm26/image/upload/v1510562513/scs_a_jq7zjm.webp" type="image/webp"> -->
-                <!-- <img class="img_center" style="z-index: -1;" src="https://res.cloudinary.com/farm26/image/upload/v1510581217/scs_none_xi5nyd.png"> -->
-                <img class="img_center" style="z-index: -1;" src="https://res.cloudinary.com/farm26/image/upload/v1511508502/ikosaedr_tf8bp8.png">
-            </picture>
-        </div>
-
+    <div id="main_page" class="full_screen">        
 
         <div class="full_screen">
             <h1>
                 Бескомпромиссное качество классической мужской одежды bespoke с 2006 года, Костюм на заказ, Сорочка на заказ, Пальто на заказ
                 в Ателье Бурбаки
             </h1>
+        </div>
+        <div id="logo" class="container img-rotate-y">
+            <img class="img_center" style="z-index: -1;" src="https://res.cloudinary.com/farm26/image/upload/v1511508502/ikosaedr_tf8bp8.png">
         </div>
 
     </div>

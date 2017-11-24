@@ -70,20 +70,27 @@
             cursor: pointer;
         }
 
+        @media all and (min-width: 100px) {
+            h1,
+            .main_text {
+                font-size: 8vw;
+                line-height: 12vw;
+            }
+        }
+
+        @media all and (min-width: 600px) {
+            h1,
+            .main_text {
+                font-size: 6vw;
+                line-height: 8vw;
+            }
+        }
 
         @media all and (min-width: 960px) {
             h1,
             .main_text {
                 font-size: 60px;
                 line-height: 100px;
-            }
-        }
-
-        @media all and (max-width: 959px) {
-            h1,
-            .main_text {
-                font-size: 6vw;
-                line-height: 8vw;
             }
         }
 
@@ -588,21 +595,16 @@
         });
     </script>
 
-    <div id="main_page" class="full_screen">
-        <div class="container img-rotate-y">
-            <picture id="img_scs">
-                <!-- <source srcset="https://res.cloudinary.com/farm26/image/upload/v1510562513/scs_a_jq7zjm.webp" type="image/webp"> -->
-                <!-- <img class="img_center" style="z-index: -1;" src="https://res.cloudinary.com/farm26/image/upload/v1510581217/scs_none_xi5nyd.png"> -->
-                <img class="img_center" style="z-index: -1;" src="https://res.cloudinary.com/farm26/image/upload/v1511508502/ikosaedr_tf8bp8.png">
-            </picture>
-        </div>
-
+    <div id="main_page" class="full_screen">        
 
         <div class="full_screen">
             <h1>
-                Бескомпромиссное качество классической мужской одежды bespoke с 2006 года, Костюм на заказ, Сорочка на заказ,
-                Пальто на заказ в Ателье Бурбаки
+                Бескомпромиссное качество классической мужской одежды bespoke с 2006 года, Костюм на заказ, Сорочка на заказ, Пальто на заказ
+                в Ателье Бурбаки
             </h1>
+        </div>
+        <div class="container img-rotate-y">
+            <img class="img_center" style="z-index: -1;" src="https://res.cloudinary.com/farm26/image/upload/v1511508502/ikosaedr_tf8bp8.png">
         </div>
 
     </div>
