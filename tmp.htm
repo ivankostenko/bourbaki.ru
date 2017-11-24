@@ -1,0 +1,27 @@
+<script>
+    jQuery(function ($) {
+        window.onload = function () {
+            const API_URL = 'https://api.coinmarketcap.com/v1/ticker/?convert=RUB&limit=1';
+
+            function displayData() {
+                fetch(API_URL).then(res => res.json()).then(json => {
+                    const topCoin = json[0];
+                    var rub = parseFloat(topCoin.price_rub).toFixed(2);
+                    var btc_rate = 'RUB ' + rub + `(${topCoin.percent_change_1h}%)`;
+                    $('.btc_title').html('BTC: ');
+                    if (topCoin.percent_change_1h < 0) {
+                        btc_rate += '↓';
+                        $('.btc_rate').css("color", "red");
+                    } else {
+                        btc_rate += '↑';
+                        $('.btc_rate').css("color", "green");
+                    }
+                    $('.btc_rate').html(btc_rate);
+                });
+            }
+            setInterval(displayData, 5000);
+        }
+    });
+</script>
+<span class="btc_title" style="color: black;">...</span>
+<span class="btc_rate" style="color:green"></span>
