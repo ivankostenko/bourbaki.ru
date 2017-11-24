@@ -82,7 +82,7 @@
             h1,
             .main_text {
                 font-size: 6vw;
-                line-height: 8vw;
+                line-height: 7vw;
             }
         }
 
@@ -499,6 +499,7 @@
             }
 
             $('#main_page').click(function (e) {
+                $('#logo').css('transform','rotateY(180deg)');
                 show_page('#menu_page', '#main_page');
                 hist.push({
                     show: '#main_page',
@@ -603,7 +604,7 @@
                 в Ателье Бурбаки
             </h1>
         </div>
-        <div class="container img-rotate-y">
+        <div id="logo" class="container img-rotate-y">
             <img class="img_center" style="z-index: -1;" src="https://res.cloudinary.com/farm26/image/upload/v1511508502/ikosaedr_tf8bp8.png">
         </div>
 
