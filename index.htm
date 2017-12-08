@@ -70,7 +70,7 @@
             cursor: pointer;
         }
 
-        @media all and (min-width: 100px) {
+        @media screen and (min-width: 100px) and (min-height: 767px) {
             h1,
             .main_text {
                 font-size: 8vw;
@@ -78,15 +78,15 @@
             }
         }
 
-        @media all and (min-width: 600px) {
+        @media screen and (min-width: 767px) and (min-height: 767px) {
             h1,
             .main_text {
-                font-size: 6vw;
+                font-size: 5.5vw;
                 line-height: 7vw;
             }
         }
 
-        @media all and (min-width: 960px) {
+        @media screen and (min-width: 960px){
             h1,
             .main_text {
                 font-size: 60px;
@@ -137,7 +137,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 100%;
+            width: 90%;
             height: 100%;
         }
 
@@ -466,7 +466,7 @@
                     -1);
             };
 
-            function is_portrait() {
+            function is_portrait() {                
                 return (window.orientation == 0);
             }
 
@@ -499,7 +499,7 @@
             }
 
             $('#main_page').click(function (e) {
-                $('#logo').css('transform','rotateY(180deg)');
+                $('#logo').css('transform', 'rotateY(180deg)');
                 show_page('#menu_page', '#main_page');
                 hist.push({
                     show: '#main_page',
@@ -596,9 +596,9 @@
         });
     </script>
 
-    <div id="main_page" class="full_screen">        
+    <div id="main_page" class="full_screen">
 
-        <div class="full_screen">
+        <div class="full_screen" style="padding-left:5%;padding-right:5%;">
             <h1>
                 Бескомпромиссное качество классической мужской одежды bespoke с 2006 года, Костюм на заказ, Сорочка на заказ, Пальто на заказ
                 в Ателье Бурбаки
