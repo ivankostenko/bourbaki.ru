@@ -44,9 +44,11 @@
 
         @font-face {
             font-family: 'Montserrat';
+            font-family: 'Oswald';
             font-style: normal;
             font-weight: 400;
             src: local('Montserrat Regular'), local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v12/NX1NravqaXESu9fFv7KuqiEAvth_LlrfE80CYdSH47w.woff2) format('woff2');
+            src: local('Oswald Regular'), local('Oswald-Regular'), url(https://fonts.gstatic.com/s/oswald/v16/DgBpgaYycijFA8v2hNt7MfesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
             unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
         }
 
@@ -132,7 +134,7 @@
             font-family: Montserrat, sans-serif;
             font-style: normal;
             font-variant: normal;
-            font-weight: 300;
+            font-weight: 400;
             color: white;
             text-transform: uppercase;
             text-shadow: 0 1px 0 #ccc,
@@ -157,28 +159,39 @@
 
         h1 {
             transform: translateX(100%);
-            animation: scroll-left 60s linear infinite;
+            animation: scroll-left 40s linear infinite;
         }
 
         @keyframes scroll-left {
             0% {
-                transform: translateX(100%);
+                transform: translateX(100%) rotateY(-90deg);
+                opacity: 0;
+                background: rgba(0, 0, 0, 0);
             }
-
-            25% {
-                transform: translateX(0);
+            20% {
+                transform: translateX(0) rotateY(0deg);
+                opacity: 0.5;
+                background: rgba(0, 0, 0, 0);
             }
-
+            40% {
+                transform: translateX(0) rotateY(0deg);
+                opacity: 1;
+                background: rgba(255, 255, 255, 1);
+            }
             50% {
-                transform: translateX(0);
+                transform: translateX(0) rotateY(0deg);
+                opacity: 1;
+                background: rgba(0, 0, 0, 0);
             }
-
             75% {
-                transform: translateX(-100%);
+                transform: translateX(-100%) rotateY(0deg) scaleX(0.5);
+                opacity: 0;
+                background: rgba(0, 0, 0, 0);
             }
-
             100% {
-                transform: translateX(-100%);
+                transform: translateX(-100%) rotateY(0deg) scaleX(0);
+                opacity: 0;
+                background: rgba(0, 0, 0, 0);
             }
         }
 
