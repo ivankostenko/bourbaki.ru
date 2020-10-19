@@ -434,6 +434,24 @@
             width: 100px;
         }
 
+        #goBack_0 {
+            opacity: 0.8;
+            display: block;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            height: 80px;
+            width: 80px;
+            z-index: 9999;
+            cursor: hand;
+            cursor: pointer;
+        }
+
+        #goBack_0:hover {
+            height: 100px;
+            width: 100px;
+        }
+
         #works_portrait {
             background-image: url('https://res.cloudinary.com/farm26/image/upload/v1511298480/w_1_90_jegqpu.jpg');
             background-size: cover;
@@ -512,7 +530,7 @@
             var is_mobile = is_mobile() || is_portrait();
 
             if (is_mobile) {
-                $('#goMap').css('top', '10px');
+ //               $('#goMap').css('top', '10px');
                 $('#price_page').css('height', '100vh');
             }
 
@@ -547,10 +565,10 @@
                 });
             });
             $('#works').click(function (e) {
-                show_page('#works_page', '#menu_page');
+                show_page('#works_page,#goBack_0', '#menu_page');
                 hist.push({
                     show: '#menu_page',
-                    hide: '#works_page',
+                    hide: '#works_page,#goBack_0',
                     chat: null
                 });
                 if (is_portrait()) {
@@ -558,10 +576,10 @@
                 }
             });
             $('#fabrics').click(function (e) {
-                show_page('#fabrics_page', '#menu_page');
+                show_page('#fabrics_page,#goBack_0', '#menu_page');
                 hist.push({
                     show: '#menu_page',
-                    hide: '#fabrics_page',
+                    hide: '#fabrics_page,#goBack_0',
                     chat: null
                 });
                 if (is_portrait()) {
@@ -569,10 +587,10 @@
                 }
             });
             $('#price').click(function (e) {
-                show_page('#price_page', '#menu_page');
+                show_page('#price_page,#goBack_0', '#menu_page');
                 hist.push({
                     show: '#menu_page',
-                    hide: '#price_page',
+                    hide: '#price_page,#goBack_0',
                     chat: null
                 });
                 if (is_portrait()) {
@@ -580,10 +598,10 @@
                 }
             });
             $('#contacts').click(function (e) {
-                show_page('#contacts_page,#goMap', '#menu_page');
+                show_page('#contacts_page,#goMap,#goBack_0', '#menu_page');
                 hist.push({
                     show: '#menu_page',
-                    hide: '#contacts_page,#goMap',
+                    hide: '#contacts_page,#goMap,#goBack_0',
                     chat: null
                 });
                 Tawk_API.showWidget();
@@ -605,23 +623,23 @@
                 hist.pop();
             });
             $('#contacts_page').click(function (e) {
-                show_page('#menu_page', '#contacts_page,#goMap', false);
+                show_page('#menu_page', '#contacts_page,#goMap,#goBack_0', false);
                 Tawk_API.hideWidget();
                 Tawk_API.minimize();
                 hist.pop();
             });
             $('#goMap').click(function (e) {
                 e.stopPropagation();
-                show_page('#route_page,#goBack', '#contacts_page,#goMap');
+                show_page('#route_page,#goBack', '#contacts_page,#goMap,#goBack_0');
                 hist.push({
-                    show: '#contacts_page,#goMap',
+                    show: '#contacts_page,#goMap,#goBack_0',
                     hide: '#route_page,#goBack',
                     chat: true
                 });
                 Tawk_API.hideWidget();
             });
             $('#goBack').click(function (e) {
-                show_page('#contacts_page,#goMap', '#route_page');
+                show_page('#contacts_page,#goMap,#goBack_0', '#route_page');
                 Tawk_API.showWidget();
                 hist.pop();
             });
@@ -669,6 +687,7 @@
     <!-- Works Page section start -->
 
     <div id="works_page" class="full_screen">
+        <img id="goBack_0" class="grayscale" src="https://res.cloudinary.com/farm26/image/upload/v1511296788/back_lt6vxa.png" />
         <div id="wowslider-container1" class="center_vh">
             <div class="ws_images">
                 <ul>
@@ -728,6 +747,7 @@
     <!-- Fabrics Page section -->
 
     <div id="fabrics_page" class="full_screen">
+        <img id="goBack_0" class="grayscale" src="https://res.cloudinary.com/farm26/image/upload/v1511296788/back_lt6vxa.png" />
         <div id="wowslider-container2" class="center_vh">
             <div class="ws_images">
                 <ul>
@@ -786,6 +806,7 @@
     <!-- Fabrics Page end -->
     <!-- Price Page start -->
     <div id="price_page" class="full_screen">
+        <img id="goBack_0" class="grayscale" src="https://res.cloudinary.com/farm26/image/upload/v1511296788/back_lt6vxa.png" />
         <table class="container center_vh">
             <thead>
                 <tr>
@@ -857,7 +878,7 @@
                     <td>от 5 дней</td>
                 </tr>
                 <tr>
-                    <td colspan="3"  style="text-align: center; vertical-align: middle;">*Минимальный заказ на сорочки для новых клиентов - 3 сорочки. Для постоянных клиентов ателье - 1 сорочка</td>                    
+                    <td colspan="3"  style="text-align: center; vertical-align: middle;">Минимальный заказ на сорочки для новых клиентов - 3 сорочки. Для постоянных клиентов ателье - 1 сорочка. Возможны надбавки на стоимость работ</td>                    
                 </tr>
             </tbody>
         </table>
@@ -866,6 +887,7 @@
 
     <!-- Contacts Page section -->
     <div id="contacts_page" class="full_screen">
+        <img id="goBack_0" class="grayscale" src="https://res.cloudinary.com/farm26/image/upload/v1511296788/back_lt6vxa.png" />
         <img id="goMap" class="grayscale spin" src="https://res.cloudinary.com/farm26/image/upload/v1511296788/map_shadow_nnvl9c.png"
         />
         <div id="wowslider-container3" class="center_vh">
